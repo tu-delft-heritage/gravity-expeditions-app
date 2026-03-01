@@ -69,4 +69,4 @@
   });
 </script>
 
-<div class="h-full w-full" bind:this={container}></div>
+<div class="h-dvh w-dvw" bind:this={container}></div>
