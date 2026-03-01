@@ -12,6 +12,8 @@ jobs:
             contents: read
             pages: write
             id-token: write
+        env:
+            PUBLIC_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
         steps:
             - name: Checkout
               uses: actions/checkout@v6
