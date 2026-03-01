@@ -66,7 +66,7 @@
 
 <Scroller top={0} bottom={0} bind:index bind:offset bind:progress>
   <div
-    class="fixed top-0 left-0 h-screen w-screen pointer-events-auto"
+    class="fixed top-0 left-0 h-dvh w-dvw pointer-events-auto"
     slot="background"
   >
     <Map warpedMaps={currentWarpedMaps} location={currentLocation} />
