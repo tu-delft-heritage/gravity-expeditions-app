@@ -1,4 +1,5 @@
 import type { StyleSpecification } from "maplibre-gl";
+import baseUrl from "$lib/base-url";
 
 const style: StyleSpecification = {
   version: 8,
@@ -12,7 +13,7 @@ const style: StyleSpecification = {
     },
     route: {
       type: "geojson",
-      data: "/geojson/route.geojson",
+      data: `${baseUrl}/geojson/route.geojson`,
     },
   },
   layers: [
