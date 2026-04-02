@@ -121,10 +121,10 @@
           <div class="prose pt-10">
             <h2>Chapters</h2>
             {#each chapters as chapter, index}
-              <a
+              <button
                 onclick={() => scrollIntoView(chapter.slug)}
-                class="pr-5 inline-block whitespace-nowrap"
-                href="#{chapter.slug}">{index + 1}. {chapter.title}</a
+                class="p-1 mr-5 font-medium cursor-pointer hover:bg-blue-300 inline-block whitespace-nowrap"
+                >{index + 1}. {chapter.title}</button
               >
             {/each}
           </div>
