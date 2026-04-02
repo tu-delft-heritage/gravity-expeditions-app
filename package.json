@@ -27,7 +27,6 @@
   "dependencies": {
     "@allmaps/maplibre": "1.0.0-beta.42",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/svelte-scroller": "^2.0.7",
     "maplibre-gl": "^5.19.0"
   }
 }
