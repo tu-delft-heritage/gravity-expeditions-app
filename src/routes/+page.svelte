@@ -1,33 +1,28 @@
 <script lang="ts">
   import Map from "$lib/components/Map.svelte";
-  import Scroller from "@sveltejs/svelte-scroller";
   import chapters from "$lib/utils";
   import { goto } from "$app/navigation";
+  import { onMount } from "svelte";
 
-  $inspect(chapters);
-
+  let initialHash: string | undefined = $state(undefined);
   let index: number = $state(0);
+  let loaded: boolean = $state(false);
   let offset;
   let progress;
+  let scrollContainer: HTMLDivElement;
   let innerWidth: number = $state(0);
+  let offsetHeight: number = $state(0);
   let clientWidth: number = $state(0);
-  let passage = $state(false);
-  let destination: string | undefined = undefined;
+  let passage = $derived(initialHash ? true : false);
+  let destination: string | undefined = $derived(initialHash || undefined);
+  let visibleElements: string[] = $state(new Array());
+
   const padding = $derived({
     top: 25,
     bottom: 25,
     left: innerWidth > clientWidth ? clientWidth : 25,
     right: 25,
   });
-
-  const setPassage = (e: MouseEvent) => {
-    const element = e.target as HTMLAnchorElement;
-    const href = element?.getAttribute("href");
-    passage = true;
-    if (href) {
-      destination = href.slice(1);
-    }
-  };
 
   const currentChapter = $derived(chapters[index]);
   const currentSlug = $derived(currentChapter.slug);
@@ -39,21 +34,56 @@
   const previousChapter = $derived(chapters[index - 1]);
   const nextChapter = $derived(chapters[index + 1]);
 
-  $inspect(currentChapter);
-  $inspect(currentLocation);
+  // $inspect(currentChapter);
+  // $inspect(currentLocation);
+  // $inspect(visibleElements);
+
+  const scrollIntoView = (slug: string) => {
+    const elem = scrollContainer.querySelector(`[data-id=${slug}]`);
+    elem?.scrollIntoView({ behavior: "smooth" });
+  };
 
   $effect(() => {
-    const arrived = currentSlug === destination;
-    if (arrived) {
-      passage = false;
-      destination = undefined;
+    if (loaded) {
+      window.location.hash = currentSlug;
     }
   });
 
-  $effect(() => {
-    if (!passage) {
-      goto("#" + currentChapter.slug);
+  onMount(() => {
+    const initialHash = window.location.hash.slice(1);
+    if (initialHash) {
+      scrollIntoView(initialHash);
     }
+    // IntersectionObserver
+    const options = {
+      root: scrollContainer,
+      rootMargin: "-50%",
+      // scrollMargin: "0px",
+      threshold: 0,
+    };
+    const callback = (
+      entries: IntersectionObserverEntry[],
+      observer: IntersectionObserver,
+    ) => {
+      visibleElements = [];
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const elem = entry.target as HTMLElement;
+          const currentIndex = Number(elem.dataset.index);
+          const slug = elem.getAttribute("id");
+          if (slug) {
+            visibleElements.push(slug);
+          }
+          index = currentIndex;
+        }
+      });
+    };
+    const observer = new IntersectionObserver(callback, options);
+    const sections = scrollContainer.querySelectorAll("section");
+    sections.forEach((element) => {
+      observer.observe(element);
+    });
+    loaded = true;
   });
 </script>
 
@@ -64,46 +94,35 @@
   <meta name="description" content={firstChapter.description} />
 </svelte:head>
 
-<Scroller top={0} bottom={0} bind:index bind:offset bind:progress>
-  <div
-    class="fixed top-0 left-0 h-dvh w-dvw pointer-events-auto"
-    slot="background"
-  >
+<div class="w-screen h-screen flex flex-wrap">
+  <div class="md:flex-1 w-full h-[50%] md:h-full flex-none">
     <Map warpedMaps={currentWarpedMaps} location={currentLocation} />
   </div>
 
   <div
     bind:clientWidth
-    class="p-5 min-w-80 max-w-150 pointer-events-none"
-    slot="foreground"
+    bind:offsetHeight
+    bind:this={scrollContainer}
+    class="w-full h-[50%] md:h-full md:w-120 xl:w-150 bg-white/80 shadow-xl pl-5 pr-5 overflow-auto"
   >
     {#each chapters as chapter, index}
       {@const Component = chapter.Component}
       {@const isTop = index === 0}
-      <div class="pb-5" id={chapter.slug}></div>
+      {@const isActive = currentSlug === chapter.slug}
       <section
-        class=" bg-white/80 rounded-xl shadow-xl p-5 pointer-events-auto"
+        class="pt-5 pb-5 min-h-[60%] {isActive
+          ? 'opacity-100'
+          : 'opacity-40'} transition-opacity"
+        data-index={index}
+        data-id={chapter.slug}
       >
-        <p class="float-right uppercase font-light pb-5">
-          {#if previousChapter}
-            <a href="#{previousChapter.slug}">Previous</a> |
-          {/if}
-          <a
-            onclick={setPassage}
-            href="#{isTop ? lastChapter.slug : firstChapter.slug}"
-            >{isTop ? "bottom" : "top"}</a
-          >
-          {#if nextChapter}
-            | <a href="#{nextChapter.slug}">Next</a>
-          {/if}
-        </p>
         <Component />
         {#if index === 0}
           <div class="prose pt-10">
             <h2>Chapters</h2>
             {#each chapters as chapter, index}
               <a
-                onclick={setPassage}
+                onclick={() => scrollIntoView(chapter.slug)}
                 class="pr-5 inline-block whitespace-nowrap"
                 href="#{chapter.slug}">{index + 1}. {chapter.title}</a
               >
@@ -111,10 +130,6 @@
           </div>
         {/if}
       </section>
-      {#if index < chapters.length - 1}
-        <div class="h-[120vh]"></div>
-      {/if}
     {/each}
-    <div id="bottom"></div>
   </div>
-</Scroller>
+</div>

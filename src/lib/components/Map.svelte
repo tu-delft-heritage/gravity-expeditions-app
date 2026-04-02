@@ -62,6 +62,9 @@
       console.error("MapLibre error", event.error);
     });
 
+    const control = new maplibregl.NavigationControl();
+    map.addControl(control);
+
     map.on("load", () => {
       map.addLayer(warpedMapLayer);
       loaded = true;
@@ -69,4 +72,4 @@
   });
 </script>
 
-<div class="h-dvh w-dvw" bind:this={container}></div>
+<div class="h-full w-full" bind:this={container}></div>
