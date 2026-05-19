@@ -2,7 +2,7 @@
 title: "Crossing of the Snip"
 description: "One of the objectives of the K-XVIII was to be a navigational beacon for KLM’s first trans-continental postal flight.	Thanks to the K-XVIII it could safely cross the Atlantic Ocean."
 location:
-  center: [-35.44140625, 13.624633438236152]
+  center: [-24.445944, 13.624633438236152]
 ---
 
 The direction of the voyage of the K-XVIII at this point is a bit strange. After inspection of the navigation logbook of the captain, it became clear they stayed at one location for a whole day before they reached the ridge. This was strange because the location had no significant geophysical relevance (just another submarine volcanic landscape). The comments made by Vening Meinesz in his summaries of the voyage, made it more clear:
