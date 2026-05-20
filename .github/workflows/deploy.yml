@@ -1,45 +1,46 @@
 name: Deploy
 
 on:
-    workflow_dispatch: {}
-    push:
-        branches: [main]
+  workflow_dispatch: {}
+  push:
+    branches: [main]
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            pages: write
-            id-token: write
-        env:
-            PUBLIC_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v6
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    env:
+      PUBLIC_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+      PUBLIC_PROTOMAPS_KEY: ${{ vars.PUBLIC_PROTOMAPS_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
 
-            - name: Install pnpm
-              uses: pnpm/action-setup@v4
-              with:
-                  version: 10
-                  run_install: false
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
 
-            - name: Install Node.js
-              uses: actions/setup-node@v6
-              with:
-                  node-version: 24
-                  cache: "pnpm"
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "pnpm"
 
-            - name: Install dependencies
-              run: pnpm install --no-frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
-            - name: Build
-              run: pnpm build
+      - name: Build
+        run: pnpm build
 
-            - uses: actions/configure-pages@v5
-            - uses: actions/upload-pages-artifact@v4
-              with:
-                  path: build
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: build
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
