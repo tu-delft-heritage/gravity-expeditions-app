@@ -1,4 +1,5 @@
 import type { MapLibreWarpedMapLayerOptions } from "@allmaps/maplibre";
+import baseUrl from "$lib/base-url";
 
 export const DURATION = 4000;
 export const PADDING = 25;
@@ -56,7 +57,7 @@ export const DEFAULT_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> = {
 export const SOURCES = {
   route: {
     type: "geojson",
-    data: "/geojson/route.geojson",
+    data: "${baseUrl}/geojson/route.geojson",
   },
 };
 
