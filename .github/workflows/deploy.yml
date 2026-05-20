@@ -35,7 +35,9 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: |
+          echo "PUBLIC_PROTOMAPS_KEY=$PUBLIC_PROTOMAPS_KEY" >> $GITHUB_ENV
+          pnpm build
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
