@@ -3,6 +3,11 @@ title: "Romanche Trench"
 description: "The Romanche Trench is more than seven km deep and located between Africa and South America. The trench is formed, where two plates move along each other, constructing a transform fault."
 location:
   center: [-22.543945312499996, 1.4500404973607948]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Atlantic ocean
 ---
 
 On the 11th of January 1935, the K18 sailed over the Romanche Trench. It would be the most negative gravity-observation of the professor during the voyage. The professor knew about this mysterious depth in the ocean, as a French Polar Expedition on the vessel “Romanche” discovered it 52 years earlier. However, the nature of this incredible trench was not known. The professor theorized about the subject in his “Gravity Expeditions at Sea Vol. IV” as follows:

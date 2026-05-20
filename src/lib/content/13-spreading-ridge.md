@@ -3,6 +3,11 @@ title: "Spreading Ridge"
 description: "The spreading ridge is an important aspect in plate tectonics. Vening Meinesz measured the gravity effect of several of these ridges during the voyage with the K-XVIII."
 location:
   center: [-18.852539062499996, -36.38591277287651]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 One of the secrets of the deep oceans is the spreading ridge. One of the most famous and longest ones is the Mid Atlantic Rise. It was discovered by the HMS Challenger and later mapped by other expeditions (e.g. *Meteor *1925-1927). The K-XVIII also sailed over this mysterious ridge, measuring the depth of the ocean floor and its gravity signal.

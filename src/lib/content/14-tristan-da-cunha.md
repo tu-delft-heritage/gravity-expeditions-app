@@ -3,6 +3,11 @@ title: "Tristan da Cunha"
 description: "Tristan da Cunha is a volcanic island situated in the middle of the South Atlantic Ocean. On the island is a British settlement, which is one of the most remote places to live. "
 location:
   center: [-12.28271484375, -37.0551771066608]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 When the British government heard about the scheduled journey of the K-XVIII, they requested a minor detour. They asked the Royal Netherlands Navy to determine the economic situation on the island Tristan da Cunha in the Atlantic Ocean. The K-XVIII also brought mail and supplies to the island. The island is one of the most remote places in the world and ships visited it only once a year. The islanders had to survive until the next shipment by growing potatoes, keeping a limited supply of cattle, and fishing. They were a little bit shocked when the K-XVIIII arrived, because the Tristanians had never seen a submarine before. Their Reverend Harold Wilde was able to explain what it was.

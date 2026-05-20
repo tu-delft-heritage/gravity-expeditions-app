@@ -3,6 +3,11 @@ title: "Location Finding"
 description: "To determine the position of the K-XVIII, the navigation officer would use a sextant to measure different angles between celestial objects.  "
 location:
   center: [73.916015625, -30.67571540416773]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 On board any marine vessel it is crucial to estimate your location at any time. Of course, for the K-XVIII it was even more important, because the gravity observations would otherwise be useless. Therefore, officers of the submarine were constantly busy with determining their position. Back in those days, GPS positioning was not available, so they had to rely on less advanced techniques using astronomical objects in the sky. Navigating on the Sun and stars required the use of an instrument called a sextant. This device made it possible to measure the angles between certain stars or the angle between the horizon and the Sun. With these measurements and navigational maps, the crew of the K-XVIII was able to determine their position with an accuracy of a few minutes (2-3 km).

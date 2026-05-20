@@ -3,6 +3,11 @@ title: "Stay at Fremantle"
 description: "Many Australians came to see the K-XVIII when it arrived in Fremantle. The professor visited the University of West Australia, where he made an observation of the gravity field. "
 location:
   center: [115.72998046875, -32.0510073612539]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 The K-XVIII was the first submarine to visit the docks of Fremantle, which became an important submarine base in WWII. This gave Vening Meinesz the opportunity to visit the University of West Australia, of which a few records remain. One of them is a brass plaque that is mounted on the wall in the old building of the Department of Physics and Chemistry, now Occupied by Geology. Here, the gravity field was measured to be 979,390 mGal, or 9.79390 m/s^2. The stay in Fremantle and Perth was very valuable for Professor Vening Meinesz, as he states in “Gravity Expeditions at Sea Vol. III”:

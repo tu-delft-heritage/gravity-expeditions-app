@@ -3,6 +3,11 @@ title: "Gravity compared"
 description: "The incredible work is best shown when we compare the gravity observations of Vening Meinesz with current satellite data. Thanks to the incredible accurate observations of Vening Meinesz, numerous secrets of the Earth were discovered."
 location:
   center: [13.0078125, -34.30714385628803]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 The gravity observations of Vening Meinesz have changed the way scientists look at the Earth, and his systematic way of working was an inspiration for future expeditions. One of the most remarkable aspects of the work of Vening Meinesz is the enormous devotion to the accuracy of the gravity measurements. Before he commenced the submarine voyages, Professor Vening Meinesz had performed numerous calibration experiments with his pendulum apparatus and his other equipment. Due to this tedious work, which took him several years, he was able to do measurements with a precision that is almost similar that of current satellite gravity missions.

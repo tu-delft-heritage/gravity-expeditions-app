@@ -3,6 +3,11 @@ title: "Isostasy Explained"
 description: "Vening Meinesz discovered, during his many expeditions that the strength of the crust is partially responsible for supporting mountains and continents."
 location:
   center: [-16.918945312499996, 32.694865977875075]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Atlantic ocean
 ---
 
 One of the most famous theories of Professor Vening Meinesz is about the isostasy of the Earth’s crust. The crust is in an almost perfect state of isostatic equilibrium, which means that the crust is balanced between its gravitational force and the buoyancy force of the mantle. The crust floats atop of the mantle, just like a ship or iceberg floats in the water. On January 25 1855, the British astronomer G. B. Airy sent his paper to the Royal Society on the same equilibrium problem that J. H. Pratt had discussed before the same society on December 7 1854. Both Pratt and Airy had devised a theory that explained why mountains do not sink due to their weight into the deep depths of the Earth.

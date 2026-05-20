@@ -1,8 +1,10 @@
 ---
 title: "Subduction Zone"
 description: "At the end of the journey of the K-XVIII they sailed over a subduction zone, which is, coincidentally, also the location of the end-of-life of an oceanic plate. "
-location:
-  center: [115.6640625, -10.962764256386809]
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/389ef7877503283a@d90ca6e5cd95fd1b
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Gravimetrical Geological Map of the East-Indian Archipelago
 ---
 
 After leaving the port of Fremantle, the final part of the long voyage of the K-XVIII could commence. The K-XVIII would be enlisted in the service of the Dutch Navy to protect its colonies. The East Indies was a well-known area for the professor; here he came up with his theory on the famous Vening Meinesz belts. Unfortunately for Vening Meinesz, captain Hetterschij would not dive with the K-XVIII upon approaching the East Indies, because he wanted the submarine to look at its best. The whole vessel was cleaned and re-painted during the last few miles, before the K-XVIII entered the colonial waters. This made it impossible for Vening Meinesz to measure the subduction zone, south of Java. Luckily, on previous expeditions he had mapped this incredible feature in the gravity anomalies in detail.

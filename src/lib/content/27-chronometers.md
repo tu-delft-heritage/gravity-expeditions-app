@@ -3,6 +3,11 @@ title: "Chronometers"
 description: "Professor Vening Meinesz needed accurate timekeeping during his voyage for his precise gravity measurements, so he brought the best clocks available with him."
 location:
   center: [111.884765625, -19.145168196205283]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 Timekeeping is very important for the navigation of a submarine. However, Vening Meinesz needed a more accurate timing for his gravity experiments. The period of his pendulums depends on gravity, so he wanted to observe the period as accurately as possible. The accuracy of his gravity anomalies depends on his ability in time keeping and should be the best possible. For this purpose, Vening Meinesz had brought four different chronometers onboard the K-XVIII.

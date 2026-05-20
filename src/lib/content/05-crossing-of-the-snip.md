@@ -4,6 +4,10 @@ description: "One of the objectives of the K-XVIII was to be a navigational beac
 location:
   center: [-24.445944, 12.624633438236152]
   zoom: 8
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Atlantic ocean
 ---
 
 The direction of the voyage of the K-XVIII at this point is a bit strange. After inspection of the navigation logbook of the captain, it became clear they stayed at one location for a whole day before they reached the ridge. This was strange because the location had no significant geophysical relevance (just another submarine volcanic landscape). The comments made by Vening Meinesz in his summaries of the voyage, made it more clear:

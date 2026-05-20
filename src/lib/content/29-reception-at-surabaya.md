@@ -3,6 +3,11 @@ title: "Reception at Surabaya"
 description: "After eight months of sailing the oceans of the Earth, the K-XVIII with professor Vening Meinesz arrived at the final port, Surabaya, where a large crowd awaited them. "
 location:
   center: [112.72933959960938, -7.209219097634251]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/389ef7877503283a@d90ca6e5cd95fd1b
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Gravimetrical Geological Map of the East-Indian Archipelago
 ---
 
 After eight months the K-XVIII and its crew arrived at their final destination, Surabaya, on 11 July 1935. The submarine had travelled over 23.000 miles and the crew had performed around 240 diving procedures so that Vening Meinesz could measure the gravity field.

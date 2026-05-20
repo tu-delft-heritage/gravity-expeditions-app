@@ -3,6 +3,11 @@ title: 'Comité "Onze Marine"'
 description: "The citizens of the Netherlands were excited by the long voyage of the K-XVIII. They started a comity to help the crew during the entire expedition."
 location:
   center: [57.487335205078125, -20.16038742754386]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 _Comité “Onze Marine”_ (committee “our Navy”) was established in 1921 to improve the relationship between the public and the Royal Netherlands Navy. The founder and chairman, A.W.P. Angenent, believed the journey of the K-XVIII would be the perfect opportunity to improve this relationship.

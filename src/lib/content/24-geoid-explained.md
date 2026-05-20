@@ -3,6 +3,11 @@ title: "Geoid Explained"
 description: "Geodesy is the study that is responsible for measuring the shape of the Earth. One of their biggest concerns is the definition of 0 meter height, or sea level. "
 location:
   center: [93.779296875, -33.9433599465788]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 You have learned that the Earth is not a perfect sphere and that you can measure the curvature of the Earth by observing the gravity field. There is, however, more to learn about the structure of the Earth by observing the gravity field. One good example can be seen in the Indian Ocean, which Vening Meinesz and the K-XVIII crossed sailing from Mauritius to Fremantle, Australia. Unfortunately, the professor could not measure at all during the crossing, because extreme weather conditions made it impossible for the K-XVIII to perform diving maneuvers. Therefore, we look at gravity models constructed by satellite gravity missions.

@@ -3,6 +3,7 @@ title: "Departure Den Helder"
 description: "The K-XVIII departed on 14 November 1934 from the Dutch Navy harbor in Den Helder to commence the longest solo mission for a submarine. On board the K-XVIII was professor Vening Meinesz."
 location:
   center: [4.7879791259765625, 52.96497693568997]
+  zoom: 10
 ---
 
 After months of preparations, the K-XVIII left the port of Den Helder for the longest journey with a submarine ever made. The submarine would travel over 23.000 miles during eight months to its final destination, Surabaya. Ships would normally cross the Suez Canal, but the K-XVIII would use a different route. It took a detour via West Africa, South-America, South Africa and Western Australia. The journey had several goals, which were mentioned by rear admiral, T. L. Kruijs, at the departure ceremony:

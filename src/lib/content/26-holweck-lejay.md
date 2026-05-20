@@ -3,6 +3,11 @@ title: "Holweck-Lejay"
 description: "The Golden Calf was too big and heavy to quickly take on land, so Vening Meinesz had acquired a Holweck-Lejay gravimeter from the “Bataafsche Petrolium Maatschappij” to perform land measurements. "
 location:
   center: [116.76269531249999, -25.244695951306028]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 During the voyage, Professor Vening Meinesz also had a smaller device with him to perform gravity measurements on land. The heavy pendulum apparatus was difficult to take out of the submarine and this was therefore only done during the stay at Cape Town. For land observations the Holweck-Lejay gravimeter was lent by the ‘Bataafse Petroleum Maatschappij’ (later merged to Shell), such that the professor was also able to observe the gravity field on land. This much smaller device, 15x15x30 cm in size, was much easier to take on land. The Holweck-Lejay gravimeter needed a very stable platform, like a concrete floor or some church steps as can be seen in the following clip.

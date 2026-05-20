@@ -3,6 +3,11 @@ title: "Diving Procedure"
 description: "The crewmembers aboard the K-XVIII performed diving procedures three times a day, on average. These procedures were performed by at least one third of the crew.	"
 location:
   center: [-32.783203125, -39.232253141714885]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 Diving procedures were performed on average three times a day during the expedition. During these procedures, Professor Vening Meinesz carried out his gravity measurements. The crew received a bonus when they fulfilled this task, so they were pleased the professor wanted to dive three times a day. They soon called his apparatus the “Golden Calf”.

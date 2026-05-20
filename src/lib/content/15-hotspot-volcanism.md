@@ -3,6 +3,11 @@ title: "Hotspot Volcanism"
 description: "Hotspot volcanism is one of the three types of volcanism found on Earth. The source for these volcanoes is found in the deep layers of the mantle."
 location:
   center: [4.130859375, -28.92163128242129]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 There are three types of volcanism on Earth, where two types are related to plate tectonics: subduction volcanism and spreading ridge volcanism. The third type is more related to deep mantle effects, called hotspot volcanism. A typical case of hotspot volcanism is the volcano of Tristan da Cunha.

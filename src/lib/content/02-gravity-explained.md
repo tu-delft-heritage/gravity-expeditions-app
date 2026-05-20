@@ -3,6 +3,11 @@ title: "Gravity Explained"
 description: "The goal of Vening Meinesz was to measure the gravity field of the Earth. What is gravity and why does it differ on various locations."
 location:
   center: [-8.701171874999998, 46.619261036171515]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Atlantic ocean
 ---
 
 Professor Vening Meinesz undertook his numerous submarine-expeditions to measure the gravity field of the Earth, but what is gravity and why did he need to measure it at different locations around the globe? It was Isaac Newton (1687), who provided the definition of the gravitational force:

@@ -3,6 +3,11 @@ title: "Pendulum Apparatus"
 description: "Vening Meinesz had designed the pendulum apparatus in 1921 to remove vertical motions from the observations. This invention made it possible to observe the gravity field on the oceans."
 location:
   center: [27.509765625, -36.949891786813275]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 The pendulum apparatus of Professor Vening Meinesz is also called “Het Gouden Kalf”, or The Golden Calf. This unofficial name was given by the numerous submarine crewmembers. For them this gravimeter meant extra income. To eliminate high-frequency motion during measurements, the submarine had to dive to 30 meters depth, where high-frequent wave-motion was damped. Furthermore, to reduce high-frequency oscillations, the crewmembers that were not needed to operate diving instruments, should lie in their bunks and remain still. Due to this decrease in personal freedom, they obtained extra payment every time an observation was made, making the pendulum apparatus a golden calf for the crewmembers.

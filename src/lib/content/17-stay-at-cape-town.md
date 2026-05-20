@@ -3,6 +3,11 @@ title: "Stay at Cape Town"
 description: "After a long and stormy stretch over the South Atlantic Ocean, the K-XVIII finally arrived in Cape Town. The crew and the professor were greatly welcomed. "
 location:
   center: [18.511962890625, -33.97980872872456]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 On April the 1st, the K-XVIII arrived on the coast of Africa after a strenuous journey across the South Atlantic Ocean. The Dutch submarine received a warm welcome by the South Afrikaners. Due to maintenance on the submarine, the crew and Vening Meinesz stayed in Cape Town for several weeks. The professor, captain Hetterschij and several officers were invited for an automobile trip through the inlands of South Africa. This was an excellent opportunity to make several land-based gravity measurements with the Holweck-Lejay gravimeter. The profile obtained in the ocean could be extended on land, such that the professor could study continental isostasy.

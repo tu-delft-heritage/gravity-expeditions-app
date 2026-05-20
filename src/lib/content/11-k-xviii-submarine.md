@@ -3,6 +3,11 @@ title: "K-XVIII Submarine"
 description: "Thanks to an incredible design and engineering of the K-XVIII, this vessel was able to sail the Earth’s oceans and complete a trip of 23,000 miles."
 location:
   center: [-44.384765625, -36.38591277287651]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 The K-XVIII is a single-cylinder pre-WWII submarine, designed to operate in the tropical waters of the Dutch Indies. It was designed by ir. J.J. van der Struyff (1865 - 29 December 1933) and constructed in the docks of Fijenoord, Rotterdam. From June 1931 until September 1932, the K-XVIII took shape in yard No. 323, where it was finally launched on the 27th of September 1932. On the 1st of July 1933, captain Hetterschij declared the K-XVIII ready for test sailing.

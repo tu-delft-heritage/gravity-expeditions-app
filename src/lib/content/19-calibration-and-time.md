@@ -3,6 +3,11 @@ title: "Calibration and Time"
 description: "The cause of his precise measurements of the gravity field is the numerous calibrations Vening Meinesz performed in the years before his expeditions. "
 location:
   center: [30.871582031249996, -29.859701442126745]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 The observations of Professor Vening Meinesz are extremely precise and thanks to this he could make many new scientific discoveries. He was able to measure the gravity field with this precision, due to his systematic and elaborate calibration efforts. Before the famous gravity expeditions at sea, the professor had spent many years calibrating and improving his measurement techniques. C.J. Wanders wrote about this in Memorial book for Vening Meinesz:

@@ -3,6 +3,11 @@ title: "Depth Measurements"
 description: "The K-XVIII had sonar equipment on board for measuring the depth of the ocean floor, essential for Vening Meinesz’ studies. They revealed many secrets of the deep oceans. "
 location:
   center: [46.05468749999999, -28.30438068296277]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 In the old days, the depth of the ocean was measured by throwing a long rope overboard, for example Italian silk onboard the H.M.S. Challenger, with a heavy weight attached at the end. Techniques improve and the crew of the K18 had state-of-the-art equipment to measure the depth of the ocean more accurately. The Dutch Navy had installed the new “Atlas Echo Lood” device onboard the K18.

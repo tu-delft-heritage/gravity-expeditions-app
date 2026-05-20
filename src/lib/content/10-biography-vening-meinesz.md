@@ -3,6 +3,11 @@ title: "Biography Vening Meinesz"
 description: "Professor Vening Meinesz has achieved a lot during his life. His dedication to science played a major role in his life and he has influenced many scientists throughout the world. "
 location:
   center: [-40.166015625, -25.40358497318669]
+  zoom: 6
+warpedMaps:
+  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+    homepage: https://archive.org/details/gravity-expeditions-at-sea
+    caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
 
 Felix Andries Vening Meinesz was born in Scheveningen on 30 July 1887. He was the youngest son of Sjoerd Vening Meinesz and Cornelia Anna Clasina den Tex and became a famous geophysicist and geodesist in the Netherlands. He started his career studying civil engineering at the Delft University of Technology, where he graduated in 1910. He was immediately offered a job at the “The Netherlands Geodetic Committee” (Dutch: *Rijkscommissie voor graadmetingen en waterpassing) *to measure the strength of the gravitational field in the Netherlands. He finished his research with his thesis _‘Contribution to the theory of pendulum observations’_ and received his doctorate cum laude. He then turned from land to sea. He was able to persuade the Royal Netherlands Navy to take him aboard a submarine to perform measurements. This collaboration turned out to be a success and many expeditions would follow. One of the most successful and well-known expeditions was the journey with the K-XVIII in 1934-1935. This voyage was covered by the media and made Vening Meinesz a well-known figure in the Netherlands. He received many requests to speak at local gatherings, but he had to limit these lectures to one reading per city. The professor didn’t embark on submarines again, but he consulted with other scientists and published many books. Vening Meinesz stayed involved until his death on 10 August 1966.
