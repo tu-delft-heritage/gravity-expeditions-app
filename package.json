@@ -12,6 +12,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
+    "@allmaps/annotation": "1.0.0-beta.36",
     "@sveltejs/adapter-auto": "^7.0.0",
     "@sveltejs/kit": "^2.50.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
@@ -25,8 +26,11 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
+    "@allmaps/bearing": "1.0.0-beta.11",
     "@allmaps/maplibre": "1.0.0-beta.42",
+    "@protomaps/basemaps": "^5.7.2",
     "@sveltejs/adapter-static": "^3.0.10",
+    "@turf/turf": "^7.3.5",
     "maplibre-gl": "^5.19.0"
   }
 }

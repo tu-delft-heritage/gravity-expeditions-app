@@ -1,6 +1,6 @@
 <script lang="ts">
   import Map from "$lib/components/Map.svelte";
-  import chapters from "$lib/utils";
+  import chapters from "$lib/chapters";
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
 
@@ -20,9 +20,14 @@
   const padding = $derived({
     top: 25,
     bottom: 25,
-    left: innerWidth > clientWidth ? clientWidth : 25,
+    left: 25,
+    // left: innerWidth > clientWidth ? clientWidth : 25,
     right: 25,
   });
+
+  // Currently unused
+  let init: boolean = $state(false);
+  let highlight: string | undefined = $state(undefined);
 
   const currentChapter = $derived(chapters[index]);
   const currentSlug = $derived(currentChapter.slug);
@@ -94,16 +99,18 @@
   <meta name="description" content={firstChapter.description} />
 </svelte:head>
 
-<div class="w-screen h-screen flex flex-wrap">
-  <div class="md:flex-1 w-full h-[50%] md:h-full flex-none">
-    <Map warpedMaps={currentWarpedMaps} location={currentLocation} />
+<div
+  class="w-screen h-screen grid grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
+>
+  <div class="row-span-full">
+    <Map {chapters} {index} {init} {highlight} />
   </div>
 
   <div
     bind:clientWidth
     bind:offsetHeight
     bind:this={scrollContainer}
-    class="w-full h-[50%] md:h-full md:w-120 xl:w-150 bg-white/80 shadow-xl pl-5 pr-5 overflow-auto"
+    class="row-start-1 bg-white/80 pl-5 pr-5 overflow-auto"
   >
     {#each chapters as chapter, index}
       {@const Component = chapter.Component}
