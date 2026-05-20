@@ -1,12 +1,15 @@
 import { layers, namedFlavor } from "@protomaps/basemaps";
 import { DURATION, SOURCES, LAYERS } from "./settings";
 import type { Flavor } from "@protomaps/basemaps";
+import { env } from "$env/dynamic/public";
 
 type DefaultFlavors = "light" | "dark" | "white" | "grayscale" | "black";
 type LayersOptions = {
   labelsOnly?: boolean;
   lang?: string;
 };
+
+const protomapsApiKey = env.PUBLIC_PROTOMAPS_KEY || "";
 
 const backgroundColors = {
   light: "#cccccc",
@@ -42,7 +45,7 @@ export const getStyleWithoutLayers = (flavor: DefaultFlavors) => {
           '<a href="https://github.com/protomaps/basemaps">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
         type: "vector",
         tiles: [
-          "https://api.protomaps.com/tiles/v4/{z}/{x}/{y}.mvt?key=250da80caa9975d2",
+          `https://api.protomaps.com/tiles/v4/{z}/{x}/{y}.mvt?key=${protomapsApiKey}`,
         ],
         maxzoom: 15,
       },
