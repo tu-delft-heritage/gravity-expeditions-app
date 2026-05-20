@@ -57,7 +57,7 @@ export const DEFAULT_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> = {
 export const SOURCES = {
   route: {
     type: "geojson",
-    data: "${baseUrl}/geojson/route.geojson",
+    data: `${baseUrl}/geojson/route.geojson`,
   },
 };
 
