@@ -14,6 +14,7 @@ jobs:
       id-token: write
     env:
       PUBLIC_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+      PUBLIC_PROTOMAPS_KEY: ${{ vars.PUBLIC_PROTOMAPS_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -34,11 +35,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        env:
-          PUBLIC_PROTOMAPS_KEY: ${{ vars.PUBLIC_PROTOMAPS_KEY }}
-        run: |
-          echo "PUBLIC_PROTOMAPS_KEY=$PUBLIC_PROTOMAPS_KEY" >> $GITHUB_ENV
-          pnpm build
+        run: pnpm build
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
