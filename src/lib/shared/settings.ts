@@ -1,5 +1,6 @@
 import type { MapLibreWarpedMapLayerOptions } from "@allmaps/maplibre";
-import baseUrl from "$lib/base-url";
+import baseUrl from "$lib/shared/base-url";
+import type { SourceSpecification } from "maplibre-gl";
 
 export const DURATION = 4000;
 export const PADDING = 25;
@@ -39,22 +40,25 @@ export const COLORS = {
 };
 
 // https://github.com/allmaps/allmaps/blob/main/packages/render/src/shared/types.ts#L39
-export const DEFAULT_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> = {
-  applyMask: true,
-  colorize: false,
-  removeColor: false,
-  saturation: 1,
-  renderFullMask: false,
-  renderMask: false,
-  renderGcps: false,
-  renderTransformedGcps: false,
-  renderVectors: false,
-  renderGrid: false,
-  transformationType: undefined,
-  distortionMeasure: undefined,
-};
+export const DEFAULT_WARPED_MAP_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> =
+  {
+    applyMask: true,
+    colorize: false,
+    removeColor: false,
+    saturation: 1,
+    renderAppliableMask: false,
+    renderFullMask: false,
+    renderMask: false,
+    renderGcps: false,
+    renderTransformedGcps: false,
+    renderVectors: false,
+    renderGrid: false,
+    transformationType: undefined,
+    // Fix until undefined works
+    distortionMeasure: "",
+  };
 
-export const SOURCES = {
+export const SOURCES: { [key: string]: SourceSpecification } = {
   route: {
     type: "geojson",
     data: `${baseUrl}/geojson/route.geojson`,

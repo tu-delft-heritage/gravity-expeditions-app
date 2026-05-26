@@ -1,18 +1,19 @@
 import type { MapLibreWarpedMapLayerOptions } from "@allmaps/maplibre";
-import maplibregl from "maplibre-gl";
+import type { SourceSpecification } from "maplibre-gl";
 
-export type MapSlideAnnotationProps = {
+export type WarpedMapProps = {
   type?: "Image";
   url: string;
   caption?: string;
   homepage?: string;
-  bearing?: boolean;
+  useBearing?: boolean;
+  useBounds?: boolean;
   options?: Partial<MapLibreWarpedMapLayerOptions>;
   region?: [number, number, number, number];
   wiggle?: boolean;
 };
 
-export type MapSlideProps = {
+export type MapViewProps = {
   location?: {
     zoom?: number;
     center?: [number, number];
@@ -24,13 +25,13 @@ export type MapSlideProps = {
     image: string;
     dimensions: [number, number];
   };
+  caption?: string;
   freeze?: boolean;
   padding?: number;
-  hideBackground?: boolean;
+  hideBasemap?: boolean;
   contain?: boolean;
   sources?: {
-    [key: string]: maplibregl.SourceSpecification;
+    [key: string]: SourceSpecification;
   };
-  moveToTop?: string[];
-  warpedMaps?: MapSlideAnnotationProps[];
+  warpedMaps?: WarpedMapProps[] | WarpedMapProps;
 };

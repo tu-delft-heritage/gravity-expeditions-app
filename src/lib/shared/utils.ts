@@ -19,6 +19,9 @@ type Coord = [number, number];
 export const fetchJson = (url: string) =>
   fetch(url).then((resp) => resp.json());
 
+export const getValueAsArray = <T>(value: T | T[]): T[] =>
+  Array.isArray(value) ? value : [value];
+
 // Need to take into account display ratio!
 export const getNarrowBbox = (mapsBbox: BBox) => {
   const [xCenter, yCenter] = getCoords(center(bboxPolygon(mapsBbox))) as Coord;

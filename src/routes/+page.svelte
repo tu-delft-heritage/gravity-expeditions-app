@@ -1,6 +1,6 @@
 <script lang="ts">
   import Map from "$lib/components/Map.svelte";
-  import chapters from "$lib/chapters";
+  import chapters from "$lib/shared/chapters";
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
 
