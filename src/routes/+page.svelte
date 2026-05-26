@@ -103,7 +103,7 @@
   class="w-screen h-screen grid grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
 >
   <div class="row-span-full">
-    <Map {chapters} {index} {init} {highlight} />
+    <Map {chapters} {index} />
   </div>
 
   <div

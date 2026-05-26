@@ -1,63 +1,91 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
+
   import maplibregl from "maplibre-gl";
-  import { WarpedMapLayer } from "@allmaps/maplibre";
-  import { computeWarpedMapBearing } from "@allmaps/bearing";
-  import {
-    createFauxGeoreferencedMap,
-    getAxisAlignedBboxAndCenter,
-    getNarrowBbox,
-  } from "$lib/utils";
-  import { bboxPolygon } from "@turf/turf";
-  import { featureCollection } from "@turf/turf";
-  import { getLayers, getStyleWithoutLayers } from "$lib/map-style";
-  import {
-    COLORS,
-    LAYERS,
-    SOURCES,
-    PADDING,
-    DURATION,
-    FLAVOR,
-    DEFAULT_OPTIONS,
-    LOCALE,
-    ANIMATE,
-  } from "$lib/settings";
-
-  import type { MapSlideProps, MapSlideAnnotationProps } from "$lib/types";
-
   import "maplibre-gl/dist/maplibre-gl.css";
 
-  const { index, chapters, init, highlight } = $props();
+  import { WarpedMapLayer } from "@allmaps/maplibre";
+  import { computeWarpedMapBearing } from "@allmaps/bearing";
 
-  let currentSlide = $derived(chapters[index]) as MapSlideProps;
-  let location = $derived(currentSlide.location ? currentSlide.location : {});
-  let freeze = $derived(currentSlide.freeze);
-  let imageSlide = $derived(
-    currentSlide.warpedMaps?.some(
-      (warpedMaps) => warpedMaps.type === "Image",
-    ) || false,
+  import { getLayers, getStyleWithoutLayers } from "$lib/shared/basemap";
+  import {
+    getValueAsArray,
+    getAxisAlignedBboxAndCenter,
+    createFauxGeoreferencedMap,
+  } from "$lib/shared/utils";
+  import {
+    PADDING,
+    FLAVOR,
+    DEFAULT_WARPED_MAP_OPTIONS,
+    LOCALE,
+    DURATION,
+    COLORS,
+    SOURCES,
+  } from "$lib/shared/settings";
+
+  import { bboxPolygon, featureCollection } from "@turf/turf";
+
+  import type { WarpedMapProps, MapViewProps } from "$lib/shared/types";
+  import { getGeoJsonLayers } from "$lib/shared/geojson";
+
+  type Props = {
+    chapters: MapViewProps[];
+    index: number;
+  };
+
+  let { chapters, index }: Props = $props();
+  let highlight = undefined;
+
+  let start = true;
+  let initialIndex = index;
+  $effect(() => {
+    if (start && initialIndex !== index) {
+      start = false;
+      map.setPaintProperty("foreground", "background-opacity-transition", {
+        duration: DURATION,
+      });
+    }
+  });
+
+  let currentView = $derived(chapters[index]);
+  let currentLocation = $derived(
+    currentView.location ? currentView.location : {},
   );
-  let hideBackground = $derived(imageSlide || currentSlide.hideBackground);
-  let slideDuration = $derived(
-    imageSlide ? 0 : currentSlide.location?.duration,
+  let currentWarpedMaps = $derived.by(() => {
+    const warpedMaps = currentView.warpedMaps;
+    if (warpedMaps) {
+      const warpedMapsArr = getValueAsArray(warpedMaps);
+      if (warpedMapsArr.length) {
+        return warpedMapsArr;
+      }
+    }
+    return undefined;
+  });
+  let currentImageSlide = $derived(
+    currentWarpedMaps?.some((warpedMaps) => warpedMaps.type === "Image") ||
+      false,
   );
-  let slidePadding = $derived(currentSlide.padding);
-  let slideContain = $derived(currentSlide.contain);
-  let slideSources = $derived(currentSlide.sources);
-  let annotations = $derived(
-    currentSlide.warpedMaps?.length ? currentSlide.warpedMaps : undefined,
+  let currentHideBasemap = $derived(
+    currentImageSlide || currentView.hideBasemap,
   );
-  let sprite = $derived(currentSlide.sprite);
+  let currentPadding = $derived(currentView.padding);
+  let currentSources = $derived(
+    currentView.sources ? Object.keys(currentView.sources) : [],
+  );
+
+  let sprite = $derived(currentView.sprite);
 
   let map: maplibregl.Map;
   let container: HTMLElement;
   let mapLoaded = $state(false);
-  let mapIdsByAnnotationUrl = new Map();
+  let mapIdsByAnnotationUrl: Map<string, string[]> = new Map();
+  let layerIdsBySourceId: Map<string, string[]> = new Map();
   let visibleMaps: string[] = new Array();
-  let visibleLayers: Set<string> = new Set();
+  let visibleLayers: string[] = new Array();
+  let imagesAdded: Set<string> = new Set();
 
   // For debugging
-  const debug = false;
+  const debug = true;
   const useVisibility = false;
 
   // Initialize style and layers
@@ -68,7 +96,7 @@
     labelsOnly: true,
   });
   const warpedMapLayer = new WarpedMapLayer(
-    useVisibility ? { visible: false, anticipate: true } : { anticipate: true },
+    useVisibility ? { visible: false } : undefined,
   );
 
   function toggleVisibility(event: KeyboardEvent) {
@@ -83,14 +111,15 @@
     }
   }
 
-  const loadAnnotations = async (maps: MapSlideProps[]) => {
-    console.log("loading annotation");
+  const loadAnnotations = async (chapters: MapViewProps[]) => {
+    if (debug) {
+      console.log("Loading all warped maps...", chapters);
+    }
     // Add maps
-    const uniqueAnnotations = maps
-      .map((i) => i.warpedMaps)
-      .flatMap((annotations) => (annotations ? annotations : []))
+    const uniqueAnnotations = chapters
+      .flatMap((i) => (i.warpedMaps ? i.warpedMaps : []))
       // Filter for unique URLs
-      .reduce((acc: MapSlideAnnotationProps[], current) => {
+      .reduce((acc: WarpedMapProps[], current) => {
         const annotationExists = acc.some(
           (annotation) => annotation.url === current.url,
         );
@@ -115,7 +144,12 @@
               ),
             )
             .then((id) => {
-              mapIdsByAnnotationUrl.set(url, [id]);
+              if (id instanceof Error) {
+                console.error("Failed to add georeferenced map for", url, id);
+                mapIdsByAnnotationUrl.set(url, []);
+              } else {
+                mapIdsByAnnotationUrl.set(url, [id]);
+              }
             });
         } else {
           // Add the georeference annotation
@@ -125,7 +159,18 @@
               useVisibility ? { visible: false } : { opacity: 0 },
             )
             .then((ids) => {
-              mapIdsByAnnotationUrl.set(url, ids);
+              const stringIds = ids.filter(
+                (i): i is string => typeof i === "string",
+              );
+              const errors = ids.filter((i) => i instanceof Error);
+              if (errors.length) {
+                console.error(
+                  "Failed to add georeferenced map for",
+                  url,
+                  errors,
+                );
+              }
+              mapIdsByAnnotationUrl.set(url, stringIds);
             });
         }
       });
@@ -133,14 +178,63 @@
     }
   };
 
+  const loadSources = async (chapters: MapViewProps[]) => {
+    if (debug) {
+      console.log("Loading all sources...", chapters);
+    }
+    chapters
+      .flatMap((i) => (i.sources ? Object.entries(i.sources) : []))
+      .concat(Object.entries(SOURCES))
+      // Filter for unique keys
+      .reduce((acc: [string, maplibregl.SourceSpecification][], current) => {
+        const [currentId, currentSource] = current;
+        const annotationExists = acc.some(([id]) => id === currentId);
+        if (!annotationExists) {
+          acc.push(current);
+        }
+        return acc;
+      }, [])
+      .forEach(([id, source]) => {
+        if (source.type !== "geojson" && source.type !== "raster") return;
+        map.addSource(id, source);
+        if (source.type === "geojson") {
+          const layers = getGeoJsonLayers(id);
+          layers.forEach((layer) => {
+            map.addLayer(layer);
+          });
+          layerIdsBySourceId.set(
+            id,
+            layers.map((layer) => layer.id),
+          );
+        } else {
+          const layerId = `user-${source}-layer`;
+          map.addLayer(
+            {
+              id: layerId,
+              type: "raster",
+              source: id,
+              layout: { visibility: "none" },
+            },
+            "warped-map-layer",
+          );
+          layerIdsBySourceId.set(id, [layerId]);
+        }
+      });
+  };
+
   let highlightedMaps: string[] = [];
   $effect(() => {
     if (mapLoaded && highlight) {
+      if (debug) {
+        console.log("Highlighting maps...", highlight);
+      }
       const ids = mapIdsByAnnotationUrl.get(highlight);
-      warpedMapLayer.setMapsOptions(ids, {
-        renderAppliableMask: true,
-      });
-      highlightedMaps = ids;
+      if (ids) {
+        warpedMapLayer.setMapsOptions(ids, {
+          renderAppliableMask: true,
+        });
+        highlightedMaps = ids;
+      }
     } else if (mapLoaded) {
       warpedMapLayer.setMapsOptions(highlightedMaps, {
         renderAppliableMask: false,
@@ -148,80 +242,31 @@
     }
   });
 
-  // WIP
-  // $effect(() => {
-  // 	if (mapLoaded && currentSlide.moveToTop) {
-  // 		currentSlide.moveToTop.forEach((layer) => {
-  // 			map.moveLayer(layer)
-  // 		})
-  // 	}
-  // })
-
   $effect(() => {
-    if (mapLoaded) {
-      const sourceIds = slideSources ? Object.keys(slideSources) : [];
-      visibleLayers.forEach((id) => {
-        if (!sourceIds.includes(id)) {
-          map.removeLayer(id);
-          visibleLayers.delete(id);
-        }
-      });
-      if (slideSources) {
-        Object.entries(slideSources).forEach(([id, source]) => {
-          // Currently only supporting raster and geojson layers
-          const layerType =
-            source.type === "raster"
-              ? "raster"
-              : source.type === "geojson"
-                ? "line"
-                : undefined;
-          if (!map.getSource(id)) {
-            map.addSource(id, source);
-          }
-          if (layerType && !visibleLayers.has(id)) {
-            const layerOptions: maplibregl.LayerSpecification = {
-              id,
-              type: layerType,
-              source: id,
-            };
-            if (layerType === "line") {
-              layerOptions.layout = {
-                "line-join": "round",
-                "line-cap": "round",
-              };
-              layerOptions.paint = {
-                "line-color": COLORS.green.stroke,
-                "line-width": 8,
-              };
-            }
-            map.addLayer(
-              layerOptions,
-              layerType === "raster" ? "warped-map-layer" : undefined,
-            );
-          }
-          visibleLayers.add(id);
-        });
+    if (mapLoaded && currentLocation && !currentWarpedMaps) {
+      if (debug) {
+        console.log("Flying to new location...", currentLocation);
       }
-    }
-  });
-
-  $effect(() => {
-    if (mapLoaded && location && !freeze && !annotations) {
       const flyToOptions = {
-        duration: init ? 0 : DURATION,
-        ...location,
+        ...currentLocation,
       };
+      if (currentImageSlide || start) {
+        flyToOptions.duration = 0;
+      }
       map.flyTo(flyToOptions);
     }
   });
 
   $effect(() => {
-    const alwaysShow = [warpedMapLayer?.id, "foreground", "background"];
-    if (mapLoaded && hideBackground) {
+    const alwaysShow = [warpedMapLayer?.id, "foreground"];
+    if (mapLoaded && currentHideBasemap) {
+      if (debug) {
+        console.log("Changing basemap visibility...", currentHideBasemap);
+      }
       map.setPaintProperty("foreground", "background-opacity", 1);
 
       for (const layer of map.getLayersOrder()) {
-        if (!alwaysShow.includes(layer)) {
+        if (!alwaysShow.includes(layer) && !layer.startsWith("user")) {
           map.setLayoutProperty(layer, "visibility", "none");
         }
       }
@@ -229,7 +274,7 @@
       map.setPaintProperty("foreground", "background-opacity", 0);
 
       for (const layer of map.getLayersOrder()) {
-        if (!alwaysShow.includes(layer)) {
+        if (!alwaysShow.includes(layer) && !layer.startsWith("user")) {
           map.setLayoutProperty(layer, "visibility", "visible");
         }
       }
@@ -237,42 +282,40 @@
   });
 
   $effect(() => {
-    if (mapLoaded && annotations) {
+    if (mapLoaded && currentWarpedMaps) {
       // Get all IDs
       const optionsByMapId = new Map();
       const newMapIds = new Array();
-      annotations
+      currentWarpedMaps
         .slice()
         // For correct order
         .reverse()
         .forEach((annotation) => {
           const { url, options } = annotation;
           const annotationIds = mapIdsByAnnotationUrl.get(url);
-          warpedMapLayer.bringMapsToFront(annotationIds);
-          annotationIds.forEach((id: string) => {
-            optionsByMapId.set(
-              id,
-              useVisibility
-                ? {
-                    visible: true,
-                    renderPoints: true,
-                    renderLines: true,
-                    ...DEFAULT_OPTIONS,
-                    ...options,
-                  }
-                : {
-                    opacity: 1,
-                    renderPoints: true,
-                    renderLines: true,
-                    ...DEFAULT_OPTIONS,
-                    ...options,
-                  },
-            );
-            if (!visibleMaps.includes(id)) {
-              // No longer used!
-              newMapIds.push(id);
-            }
-          });
+          if (annotationIds) {
+            warpedMapLayer.bringMapsToFront(annotationIds);
+            annotationIds.forEach((id: string) => {
+              optionsByMapId.set(
+                id,
+                useVisibility
+                  ? {
+                      visible: true,
+                      ...DEFAULT_WARPED_MAP_OPTIONS,
+                      ...options,
+                    }
+                  : {
+                      opacity: 1,
+                      ...DEFAULT_WARPED_MAP_OPTIONS,
+                      ...options,
+                    },
+              );
+              if (!visibleMaps.includes(id)) {
+                // No longer used!
+                newMapIds.push(id);
+              }
+            });
+          }
         });
 
       // Check which maps to hide and show
@@ -284,59 +327,77 @@
         optionsByMapId.set(
           id,
           useVisibility
-            ? { visible: false }
+            ? { visible: false, ...DEFAULT_WARPED_MAP_OPTIONS }
             : {
                 opacity: 0,
-                ...DEFAULT_OPTIONS,
+                ...DEFAULT_WARPED_MAP_OPTIONS,
               },
         );
       });
+      if (debug) {
+        console.log("Processing current warped maps...", {
+          currentWarpedMaps,
+          optionsByMapId,
+          visibleMaps,
+        });
+      }
       // Animation not working correctly
       // const animate = init ? false : slideDuration === 0 ? false : true
       warpedMapLayer.setMapsOptionsByMapId(optionsByMapId);
 
       visibleMaps = mapIds;
 
+      let mapIdsForBounds = [];
+      const boundsFilter = currentWarpedMaps.filter(
+        (annotation) => annotation.useBounds === true,
+      );
+      if (boundsFilter.length) {
+        boundsFilter.forEach(({ url }) => {
+          const ids = mapIdsByAnnotationUrl.get(url);
+          if (ids) {
+            mapIdsForBounds.push(...ids);
+          }
+        });
+      } else mapIdsForBounds = mapIds;
+
       // Get bounds of visible maps
-      let bounds = warpedMapLayer.getMapsBbox(mapIds, {
+      let bounds = warpedMapLayer.getMapsBbox(mapIdsForBounds, {
         projection: { definition: "EPSG:4326" },
       });
       // Get optional bearing for map
-      let bearing = 0;
+      let bearing = currentLocation.bearing || 0;
       let center: maplibregl.LngLat | undefined;
 
-      const firstMapWithBearingProp = annotations.find(
-        (annotation) => annotation.bearing == true,
+      const firstMapWithBearingProp = currentWarpedMaps.find(
+        (annotation) => annotation.useBearing == true,
       );
       if (firstMapWithBearingProp) {
         const warpedMapIds = mapIdsByAnnotationUrl.get(
           firstMapWithBearingProp.url,
         );
-        const warpedMap = warpedMapLayer.getWarpedMap(warpedMapIds[0]);
 
-        const geoMasks = mapIds
-          .map((id) => {
-            const warpedMap = warpedMapLayer.getWarpedMap(id);
-            if (warpedMap) {
-              return warpedMap.geoMask;
-            }
-          })
-          .filter(Boolean);
+        if (warpedMapIds?.length) {
+          const warpedMap = warpedMapLayer.getWarpedMap(warpedMapIds[0]);
 
-        if (warpedMap) {
-          bearing = computeWarpedMapBearing(warpedMap);
-          if (location.bearing) {
-            // This can be useful if original map is rotated
-            bearing = bearing + location.bearing;
+          const geoMasks = mapIdsForBounds
+            .map((id) => {
+              const warpedMap = warpedMapLayer.getWarpedMap(id);
+              if (warpedMap) {
+                return warpedMap.geoMask;
+              }
+            })
+            .filter(Boolean);
+
+          if (warpedMap) {
+            const computedBearing = computeWarpedMapBearing(warpedMap);
+            bearing = bearing + computedBearing;
           }
-        }
 
-        ({ bounds, center } = getAxisAlignedBboxAndCenter(geoMasks, bearing));
-      }
-      if (bounds && slideContain) {
-        bounds = getNarrowBbox(bounds);
+          ({ bounds, center } = getAxisAlignedBboxAndCenter(geoMasks, bearing));
+        }
       }
       if (bounds && debug) {
+        console.log("Updating bounds layer", bounds);
         const boundsSource = map.getSource(
           "bounds",
         ) as maplibregl.GeoJSONSource;
@@ -345,21 +406,23 @@
           boundsSource.setData(features);
         }
       }
-      if (bounds && !freeze) {
+      if (bounds) {
         const camera = map.cameraForBounds(bounds, {
-          padding: slidePadding !== undefined ? slidePadding : PADDING,
+          padding: currentPadding !== undefined ? currentPadding : PADDING,
         });
         // Add optional center if bearing is used
         if (camera && center) {
           camera.center = center;
         }
         const flyToOptions = {
-          duration: init || imageSlide ? 0 : DURATION,
           ...camera,
           // Apply manual overrides
-          ...location,
+          ...currentLocation,
           bearing: -bearing,
         };
+        if (currentImageSlide || start) {
+          flyToOptions.duration = 0;
+        }
         map.flyTo(flyToOptions);
       }
     } else if (mapLoaded) {
@@ -377,6 +440,37 @@
     }
   });
 
+  $effect(() => {
+    if (mapLoaded) {
+      const alwaysVisible = Object.keys(SOURCES);
+      const currentVisibleLayers = alwaysVisible
+        .concat(currentSources)
+        .flatMap((sourceId) => layerIdsBySourceId.get(sourceId) || []);
+      const layersToShow = currentVisibleLayers.filter(
+        (layer) => !visibleLayers.includes(layer),
+      );
+      const layersToHide = visibleLayers.filter(
+        (layer) => !currentVisibleLayers.includes(layer),
+      );
+      if (debug) {
+        console.log("Processing current map sources...", {
+          visibleLayers,
+          currentSources,
+          currentVisibleLayers,
+          layersToShow,
+          layersToHide,
+        });
+      }
+      layersToHide.forEach((layer) => {
+        map.setLayoutProperty(layer, "visibility", "none");
+      });
+      layersToShow.forEach((layer) => {
+        map.setLayoutProperty(layer, "visibility", "visible");
+      });
+      visibleLayers = currentVisibleLayers;
+    }
+  });
+
   onMount(() => {
     map = new maplibregl.Map({
       container,
@@ -385,27 +479,31 @@
       attributionControl: false,
       center: [0, 0],
       zoom: 14,
+      bearingSnap: 0,
+      keyboard: false,
     });
-
-    // map.keyboard.disable();
-    const control = new maplibregl.NavigationControl();
-    map.addControl(control);
 
     map.on("load", async () => {
       // Add layers
       styleLayers.forEach((layer) => map.addLayer(layer, "foreground"));
 
+      // @ts-expect-error
       map.addLayer(warpedMapLayer);
 
-      // Add extra layers that are always visible
-      Object.entries(SOURCES).forEach(([id, source]) =>
-        map.addSource(id, source),
-      );
-      LAYERS.forEach((layer) => map.addLayer(layer));
-
+      // Load additional style sources and georeference annotations
+      loadSources(chapters);
       await loadAnnotations(chapters);
 
       // symbolLayers.forEach((layer) => map.addLayer(layer))
+
+      map.on("styleimagemissing", async (event) => {
+        const id = event.id;
+        if (!imagesAdded.has(id)) {
+          imagesAdded.add(id);
+          const image = await map.loadImage(id);
+          map.addImage(id, image.data);
+        }
+      });
 
       if (debug) {
         // Debug layer to show bounds
@@ -425,7 +523,7 @@
             "line-cap": "round",
           },
           paint: {
-            "line-color": colors.blue.stroke,
+            "line-color": COLORS.blue.stroke,
             "line-width": 8,
           },
         });
@@ -449,8 +547,14 @@
       }
     });
   });
+
+  onDestroy(() => {
+    console.log("Destroy triggered???");
+    // warpedMapLayer.clear();
+    // map.remove();
+  });
 </script>
 
 <svelte:window on:keydown={toggleVisibility} on:keyup={toggleVisibility} />
 
-<div class="maplibre h-full w-full" bind:this={container}></div>
+<div class="h-screen w-screen" bind:this={container}></div>
