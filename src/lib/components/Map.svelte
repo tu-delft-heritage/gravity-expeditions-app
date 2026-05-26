@@ -85,7 +85,7 @@
   let imagesAdded: Set<string> = new Set();
 
   // For debugging
-  const debug = true;
+  const debug = false;
   const useVisibility = false;
 
   // Initialize style and layers
