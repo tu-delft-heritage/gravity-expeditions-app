@@ -8,5 +8,5 @@
 
 <figure>
   <img {src} {alt} />
-  <figcaption>{alt}</figcaption>
+  <figcaption>{@html alt}</figcaption>
 </figure>
