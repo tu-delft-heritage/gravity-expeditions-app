@@ -1,5 +1,4 @@
 import { layers, namedFlavor } from "@protomaps/basemaps";
-import { DURATION, SOURCES, LAYERS } from "./settings";
 import type { Flavor } from "@protomaps/basemaps";
 import { env } from "$env/dynamic/public";
 
@@ -44,9 +43,7 @@ export const getStyleWithoutLayers = (flavor: DefaultFlavors) => {
         attribution:
           '<a href="https://github.com/protomaps/basemaps">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
         type: "vector",
-        tiles: [
-          `https://api.protomaps.com/tiles/v4/{z}/{x}/{y}.mvt?key=${protomapsApiKey}`,
-        ],
+        url: `https://api.protomaps.com/tiles/v4.json?key=${protomapsApiKey}`,
         maxzoom: 15,
       },
     },
@@ -57,7 +54,7 @@ export const getStyleWithoutLayers = (flavor: DefaultFlavors) => {
         paint: {
           "background-color": backgroundColors[flavor],
           "background-opacity": 1,
-          "background-opacity-transition": { duration: DURATION },
+          // "background-opacity-transition": { duration: DURATION },
         },
       },
     ],
