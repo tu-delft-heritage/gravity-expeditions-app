@@ -27,6 +27,7 @@
 
   import type { WarpedMapProps, MapViewProps } from "$lib/shared/types";
   import { getGeoJsonLayers } from "$lib/shared/geojson";
+  import baseUrl from "$lib/shared/base-url";
 
   type Props = {
     chapters: MapViewProps[];
@@ -153,6 +154,7 @@
             });
         } else {
           // Add the georeference annotation
+          const parsedUrl = !url.startsWith("http") ? baseUrl + url : url;
           return warpedMapLayer
             .addGeoreferenceAnnotationByUrl(
               url,
@@ -252,6 +254,8 @@
       };
       if (currentImageSlide || start) {
         flyToOptions.duration = 0;
+      } else if (DURATION) {
+        flyToOptions.duration = DURATION;
       }
       map.flyTo(flyToOptions);
     }
@@ -422,6 +426,8 @@
         };
         if (currentImageSlide || start) {
           flyToOptions.duration = 0;
+        } else if (DURATION) {
+          flyToOptions.duration = DURATION;
         }
         map.flyTo(flyToOptions);
       }
@@ -558,4 +564,4 @@
 
 <svelte:window on:keydown={toggleVisibility} on:keyup={toggleVisibility} />
 
-<div class="h-screen w-screen" bind:this={container}></div>
+<div class="h-full w-full" bind:this={container}></div>
