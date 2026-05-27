@@ -16,6 +16,7 @@
   let passage = $derived(initialHash ? true : false);
   let destination: string | undefined = $derived(initialHash || undefined);
   let visibleElements: string[] = $state(new Array());
+  let isDarkMode: boolean | undefined = $state(undefined);
 
   const padding = $derived({
     top: 25,
@@ -55,6 +56,16 @@
   });
 
   onMount(() => {
+    try {
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      isDarkMode = media.matches;
+      media.addEventListener("change", (event) => {
+        isDarkMode = event.matches;
+      });
+    } catch {
+      isDarkMode = false;
+    }
+
     const initialHash = window.location.hash.slice(1);
     if (initialHash) {
       scrollIntoView(initialHash);
@@ -103,14 +114,18 @@
   class="w-screen h-screen grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
 >
   <div class="min-h-0 md:row-span-full">
-    <Map {chapters} {index} />
+    {#if isDarkMode !== undefined}
+      {#key isDarkMode}
+        <Map {chapters} {index} {isDarkMode} />
+      {/key}
+    {/if}
   </div>
 
   <div
     bind:clientWidth
     bind:offsetHeight
     bind:this={scrollContainer}
-    class="row-start-2 min-h-0 bg-white/80 pl-5 pr-5 overflow-auto md:row-start-1"
+    class="row-start-2 min-h-0 bg-white/80 dark:bg-black/80 text-black dark:text-white pl-5 pr-5 overflow-auto md:row-start-1"
   >
     {#each chapters as chapter, index}
       {@const Component = chapter.Component}
@@ -125,7 +140,7 @@
       >
         <Component />
         {#if index === 0}
-          <div class="prose pt-10">
+          <div class="pt-10">
             <h2>Chapters</h2>
             {#each chapters as chapter, index}
               <button

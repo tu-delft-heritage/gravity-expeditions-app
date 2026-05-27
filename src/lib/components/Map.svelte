@@ -32,9 +32,10 @@
   type Props = {
     chapters: MapViewProps[];
     index: number;
+    isDarkMode?: boolean;
   };
 
-  let { chapters, index }: Props = $props();
+  let { chapters, index, isDarkMode }: Props = $props();
   let highlight = undefined;
 
   let start = true;
@@ -90,9 +91,10 @@
   const useVisibility = false;
 
   // Initialize style and layers
-  const styleWithoutLayers = getStyleWithoutLayers(FLAVOR);
-  const styleLayers = getLayers(FLAVOR);
-  const symbolLayers = getLayers(FLAVOR, undefined, {
+  const flavor = isDarkMode ? "black" : "light";
+  const styleWithoutLayers = getStyleWithoutLayers(flavor);
+  const styleLayers = getLayers(flavor);
+  const symbolLayers = getLayers(flavor, undefined, {
     lang: LOCALE,
     labelsOnly: true,
   });

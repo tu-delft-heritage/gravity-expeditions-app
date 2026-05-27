@@ -15,7 +15,7 @@
   } = $props();
 </script>
 
-<div class="clear-both prose">
+<div class="clear-both prose dark:prose-invert">
   <h1>{title}</h1>
   <p class="italic">{description}</p>
   {@render children?.()}
