@@ -111,7 +111,7 @@
 </svelte:head>
 
 <div
-  class="w-screen h-screen grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
+  class="h-app-screen w-screen grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
 >
   <div class="min-h-0 md:row-span-full">
     {#if isDarkMode !== undefined}
