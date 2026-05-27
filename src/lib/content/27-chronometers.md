@@ -12,14 +12,14 @@ warpedMaps:
 
 Timekeeping is very important for the navigation of a submarine. However, Vening Meinesz needed a more accurate timing for his gravity experiments. The period of his pendulums depends on gravity, so he wanted to observe the period as accurately as possible. The accuracy of his gravity anomalies depends on his ability in time keeping and should be the best possible. For this purpose, Vening Meinesz had brought four different chronometers onboard the K-XVIII.
 
-- The Nardin 212
-- The Nardin 2081
+- The [Nardin 212](https://heritage.tudelft.nl/objects/d489f571-ccc9-4518-9126-f1add8cd869e)
+- The [Nardin 2081](https://heritage.tudelft.nl/objects/a107684c-47d6-49bc-bfc6-505ff4f6026d)
 - The Brocking 1287
-- The Ullysses Nardin 17984
+- The [Ullysses Nardin 17984](https://heritage.tudelft.nl/objects/73e2f765-cbc4-4c80-af25-684bb9f2d646)
 
 The Nardin and Brocking chronometers were designed to give an electrical charge every half a second, which could be used by the Golden Calf. This charge briefly closes a shutter, which resulted in a small break in the recording. Due to these little breaks, it was possible to determine the period of the recorded signals with extreme precision. The three chronometers had a precision of a microsecond, or 1/1000 of a second. This was a remarkable feature in 1930.
 
-The Nardin 212 is situated in the collection of the Depot TUDelft and is still in working order ([see video link](https://www.youtube.com/watch?v=X007Ay3cv6g)). Due to its excellent performance, Vening Meinesz took the Nardin 212 on every one of his submarine expeditions.
+The Nardin 212 is situated in TU Delft Library's special collections and is still in working order. Due to its excellent performance, Vening Meinesz took the Nardin 212 on every one of his submarine expeditions.
 
 ![](/images/illustrations/chronometers-1.jpg)
 

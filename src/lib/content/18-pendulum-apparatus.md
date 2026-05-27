@@ -21,3 +21,5 @@ By combining the motion of two pendulums, Vening Meinesz was able to eliminate t
 ![Top view of the pendulum apparatus, where the different path of the light beams are drawn. The vertical motion of every line is recorded: motion of P1-P2 (red), motion of P2 (blue), motion of P2-P3 (green), and motion of damped pendulum (yellow).](/images/illustrations/pendulum-apparatus-2.jpg)
 
 His apparatus would be the only way to measure the gravity field with such high precision on the sea for the next 35 years. Eventually, it would be replaced by an Askania spring gravimeter on a stable platform, which could be used by surface ships.
+
+View the object in TU Delft Library's [special collections](https://heritage.tudelft.nl/objects/03268153-c9a0-4e81-9771-0566cfa4f3d1).
