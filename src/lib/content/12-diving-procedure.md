@@ -3,9 +3,9 @@ title: "Diving Procedure"
 description: "The crewmembers aboard the K-XVIII performed diving procedures three times a day, on average. These procedures were performed by at least one third of the crew.	"
 location:
   center: [-32.783203125, -39.232253141714885]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---

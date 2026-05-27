@@ -3,9 +3,9 @@ title: "Gravity compared"
 description: "The incredible work is best shown when we compare the gravity observations of Vening Meinesz with current satellite data. Thanks to the incredible accurate observations of Vening Meinesz, numerous secrets of the Earth were discovered."
 location:
   center: [13.0078125, -34.30714385628803]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
@@ -14,6 +14,6 @@ The gravity observations of Vening Meinesz have changed the way scientists look 
 
 Let’s compare the pendulum measurements with a gravity map solely based on satellite gravity mission, like NASA’s GRACE mission and ESA’s GOCE mission. The spatial resolution of Vening Meinesz’ measurements is of course much lower. He made about 240 measurements during this voyage, which is nothing compared to the thousand observations of satellites every week. To compare the gravity measurements done 80 years ago by Vening Meinesz, we can look at the crossing of the South Atlantic.
 
-![](/images/gravity-compared-1.jpg)
+![](/images/illustrations/gravity-compared-1.jpg)
 
 The top figure shows the free-air anomaly of the crossing of the South Atlantic. The observations of Vening Meinesz are in red and the satellite observations in black. Both the Rio Grande Rise (stations 620-623) and the Walvis Ridge (stations 640-644) are prominent features in the gravity signal. When we look at the absolute difference between Vening Meinesz’ measurements and the satellite measurements a mean difference of 10.6 mGal is seen with a standard deviation of 26.2. This is higher than the formal error estimate of the professor (max 8 mGal). The relative difference shows that most points are below 10 percent difference when compared to current satellite measurements. These observations are a remarkable achievement for a scientist on board a moving submarine some 80 years ago.

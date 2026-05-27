@@ -3,9 +3,9 @@ title: "Reception at Surabaya"
 description: "After eight months of sailing the oceans of the Earth, the K-XVIII with professor Vening Meinesz arrived at the final port, Surabaya, where a large crowd awaited them. "
 location:
   center: [112.72933959960938, -7.209219097634251]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/389ef7877503283a@d90ca6e5cd95fd1b
+  - url: annotations/GEASv4_gravimetrical_geological_map_east-indian_archipelago_part_4.1.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Gravimetrical Geological Map of the East-Indian Archipelago
 ---

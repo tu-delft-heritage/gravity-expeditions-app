@@ -3,9 +3,9 @@ title: "Chronometers"
 description: "Professor Vening Meinesz needed accurate timekeeping during his voyage for his precise gravity measurements, so he brought the best clocks available with him."
 location:
   center: [111.884765625, -19.145168196205283]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
@@ -21,14 +21,14 @@ The Nardin and Brocking chronometers were designed to give an electrical charge 
 
 The Nardin 212 is situated in the collection of the Depot TUDelft and is still in working order ([see video link](https://www.youtube.com/watch?v=X007Ay3cv6g)). Due to its excellent performance, Vening Meinesz took the Nardin 212 on every one of his submarine expeditions.
 
-![](/images/chronometers-1.jpg)
+![](/images/illustrations/chronometers-1.jpg)
 
 The Nardin 2081 was the newest chronometer on board, but broke down during the voyage. The first time was at measurement 149, station 634. Then, it was somehow fixed, because it was used again for measurement 155. Finally, it broke down for the remainder of the voyage during measurement 211, station 696.
 
-![](/images/chronometers-2.jpg)
+![](/images/illustrations/chronometers-2.jpg)
 
 The Brocking 1287 was given by the French Navy to Vening Meinesz to be used during the K-XVIII expedition. Shortly before the K-XVIII expedition, Vening Meinesz had given the ‘Golden Calf’ with the Nardin chronometers to the French Navy to be used in their gravity expeditions. These exchanges of chronometers saved Vening Meinesz’ work, because the Nardin 2081 broke down at the end of the expedition, which would have consequences for the uncertainty estimate in the measurements.
 
 The Ullysses Nardin 17984 was used for the Holweck-Lejay observations on Land. This small two-pointer stopwatch was easy to take on land excursions. The UN 17984 is seen in the movie, when Vening Meinesz is performing a Holweck-Lejay measurement on the steps of a small church (see Holweck-Lejay).
 
-![](/images/chronometers-3.jpg)
+![](/images/illustrations/chronometers-3.jpg)

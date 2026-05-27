@@ -3,9 +3,9 @@ title: "Stay at Cape Town"
 description: "After a long and stormy stretch over the South Atlantic Ocean, the K-XVIII finally arrived in Cape Town. The crew and the professor were greatly welcomed. "
 location:
   center: [18.511962890625, -33.97980872872456]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
@@ -14,4 +14,4 @@ On April the 1st, the K-XVIII arrived on the coast of Africa after a strenuous j
 
 The K-XVIII made a small trip to Simonstad after a week in Cape Town. Here in the large Navy docks, the submarine’s hull was cleaned after the 4 months journey. In the dry docks, workers would give the boat a new layer of paint after the hull had been scraped clean from small sea animals and rust. But before all this, Mr Searle, head engineer of the docks, challenged the fit submarine crew to compete against the dock personnel. The bay of Simonstad was full of fish and during the pumping of the dry dock; Mr. Searle knew many fish would get caught in the dock. Armed with brooms, both the submarine crew and dock personnel battled to catch the most fish. The dock personnel were very skilled, but lost against the enthusiasm of the submarine crew. As a consolation price the dockworkers received most of the fish to take home.
 
-![The K-XVIII positioned in the dry docks of Simonstad for maintenance.](/images/stay-at-cape-town-1.jpg)
+![The K-XVIII positioned in the dry docks of Simonstad for maintenance.](/images/illustrations/stay-at-cape-town-1.jpg)

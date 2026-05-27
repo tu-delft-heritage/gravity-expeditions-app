@@ -3,9 +3,9 @@ title: "Calibration and Time"
 description: "The cause of his precise measurements of the gravity field is the numerous calibrations Vening Meinesz performed in the years before his expeditions. "
 location:
   center: [30.871582031249996, -29.859701442126745]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
@@ -18,6 +18,6 @@ The observations of Professor Vening Meinesz are extremely precise and thanks to
 
 For five whole years, he calibrated not only his pendulum apparatus, but also the chronometers. Temperature, humidity and pressure variations were tested and their effects on the instruments were documented. However, in those days no GPS or atomic time was yet available. So in order to obtain precise timekeeping, he asked for help of the Observatory of Delft and Leiden. Many letters between Vening Meinesz and the Observatory of Leiden were written in the period leading up to the expeditions.
 
-![The figure shows an example of correspondence between Vening Meinesz and the Observatory of Leiden (H.J. Zwiers) about timekeeping measurements.](/images/calibration-and-time-1.jpg)
+![The figure shows an example of correspondence between Vening Meinesz and the Observatory of Leiden (H.J. Zwiers) about timekeeping measurements.](/images/illustrations/calibration-and-time-1.jpg)
 
 The observatory of Delft, aiding Leiden, was responsible for Dutch time and had a Strasser-Rode clock located in the building for this purpose. This clock was the most accurate clock available in those times. Vening Meinesz spent many hours in the Observatory to calibrate his instruments. The professor would not be able to observe the Earth’s gravity field without these calibrations efforts.

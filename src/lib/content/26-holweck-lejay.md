@@ -3,9 +3,9 @@ title: "Holweck-Lejay"
 description: "The Golden Calf was too big and heavy to quickly take on land, so Vening Meinesz had acquired a Holweck-Lejay gravimeter from the “Bataafsche Petrolium Maatschappij” to perform land measurements. "
 location:
   center: [116.76269531249999, -25.244695951306028]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
@@ -14,12 +14,12 @@ During the voyage, Professor Vening Meinesz also had a smaller device with him t
 
 The measurement principle of the Holweck-Lejay gravimeter was an oscillating inversed-pendulum in a vacuum chamber. From the period of the oscillating pendulum, Vening Meinesz was able to compute the local gravity field. For timing this period he took the Ullysses Nardin 17984 chronometer with him. After one hour, he would know the gravity with an accuracy of around 5 mGal.
 
-![sThe Holweck-Lejay gravimeter is shown on the left and the Ullysses Nardin 17984 chronometer is shown on the right.](/images/holweck-lejay-1.jpg)
+![sThe Holweck-Lejay gravimeter is shown on the left and the Ullysses Nardin 17984 chronometer is shown on the right.](/images/illustrations/holweck-lejay-1.jpg)
 
 The light source made it possible to observe the period (T) of the pendulum, which was measured with a chronometer. The value of the gravity could be obtained with the following relation:
 
-![](/images/holweck-lejay-2.jpg)
+![](/images/illustrations/holweck-lejay-2.jpg)
 
 The period is dependent on the spring constant, K, the mass of the pendulum, M, the length of the pendulum, L, the moment of inertia of the pendulum, I, and the gravity at the location, g. All these variables, except gravity, could be obtained in the laboratory beforehand, which made it possible for Vening Meinesz to observe the gravity all around the world.
 
-![The figure shows a schematic representation of the Holweck-Lejay gravimeter. The inside of the vacuum chamber is made visible, which contains the inverse pendulum-spring system (blue). The motion of this pendulum was observed by the shadow it made with respect to the light source (viewing line: dashed red). Press on figure for moving Holweck Lejay](/images/holweck-lejay-3.jpg)
+![The figure shows a schematic representation of the Holweck-Lejay gravimeter. The inside of the vacuum chamber is made visible, which contains the inverse pendulum-spring system (blue). The motion of this pendulum was observed by the shadow it made with respect to the light source (viewing line: dashed red). Press on figure for moving Holweck Lejay](/images/illustrations/holweck-lejay-3.jpg)

@@ -3,9 +3,9 @@ title: "Neptune's Ritual"
 description: "Crossing the equator with a ship could attract the god of the ocean to come aboard. Neptune and his wife visited the K-XVIII, when they crossed the equator on the 11th of January 1935."
 location:
   center: [-22.5, 4.12728532324537]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68
+  - url: annotations/GEASv4_bathymetric_chart_atlantic_ocean.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Atlantic ocean
 ---

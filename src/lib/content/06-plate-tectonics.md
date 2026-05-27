@@ -3,9 +3,9 @@ title: "Plate Tectonics"
 description: "The theory of plate tectonics was not yet accepted by the academic society during Vening Meinesz time. He did not believe in it, but his observations tell a different story."
 location:
   center: [-43.06640625, 11.60919340793894]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68
+  - url: annotations/GEASv4_bathymetric_chart_atlantic_ocean.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Atlantic ocean
 ---
@@ -20,6 +20,6 @@ The theory of plate tectonics states that the surface of the Earth consists of s
 
 The ‘Wilson Cycle’, by Tuzco Wilson (1966), describes the creation and destruction of such plates and beautifully explains many geological observations. To find out more about the beauty of this theory, please visit the [wikipedia page on plate tectonics](https://en.wikipedia.org/wiki/Plate_tectonics).
 
-![The Earth’s crust consists of several individual plates, listed in the figure. At the boundaries of these rigid plates, different geological processes take place, depending on the relative motion of the bounding plates.](/images/plate-tectonics-1.jpg)
+![The Earth’s crust consists of several individual plates, listed in the figure. At the boundaries of these rigid plates, different geological processes take place, depending on the relative motion of the bounding plates.](/images/illustrations/plate-tectonics-1.jpg)
 
 The Figure shows the main rigid plates of the Earth. The largest plate is the Pacific Oceanic plate, which almost completely covers the entire Pacific Ocean. The continents are situated on their separate plates; however this was not always the case in the distant past. Supercontinents like Gondwana were once the face of the Earth.

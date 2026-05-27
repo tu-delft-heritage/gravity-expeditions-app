@@ -3,9 +3,9 @@ title: "Stay at Fremantle"
 description: "Many Australians came to see the K-XVIII when it arrived in Fremantle. The professor visited the University of West Australia, where he made an observation of the gravity field. "
 location:
   center: [115.72998046875, -32.0510073612539]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
@@ -16,4 +16,4 @@ The K-XVIII was the first submarine to visit the docks of Fremantle, which becam
 
 Dr. Ross took the professor on a road trip through the inlands of West Australia, where several measurements of the gravity field were performed with the Holweck-Lejay gravimeter. These inland observations could subsequently be used to complete the coastal profile and study the continental isostasy.
 
-![Thanks to the Holweck-Lejay gravity profile, during the stay in West Australia, Vening Meinesz viewed large gravity anomalies, which could not be explained by isostasy. The Darling fault, which is visible from space, could be the source for this effect.](/images/stay-at-fremantle-1.jpg)
+![Thanks to the Holweck-Lejay gravity profile, during the stay in West Australia, Vening Meinesz viewed large gravity anomalies, which could not be explained by isostasy. The Darling fault, which is visible from space, could be the source for this effect.](/images/illustrations/stay-at-fremantle-1.jpg)

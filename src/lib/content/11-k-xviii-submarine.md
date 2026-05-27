@@ -3,9 +3,9 @@ title: "K-XVIII Submarine"
 description: "Thanks to an incredible design and engineering of the K-XVIII, this vessel was able to sail the Earth’s oceans and complete a trip of 23,000 miles."
 location:
   center: [-44.384765625, -36.38591277287651]
-  zoom: 6
+  zoom: 5
 warpedMaps:
-  - url: https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6
+  - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
     homepage: https://archive.org/details/gravity-expeditions-at-sea
     caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 ---
