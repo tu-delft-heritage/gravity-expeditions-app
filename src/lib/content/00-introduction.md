@@ -2,8 +2,8 @@
 title: "Gravity Expeditions at Sea"
 description: "The K-XVIII expedition was a Dutch geodetic and geophysical expedition to East Indies from 14 November 1934 until 11 July 1935. On board was the Dutch scientist Felix Andries Vening Meinesz with his pendulum apparatus the ‘Golden Calf’ to measure the gravity field of the Earth."
 location:
-  center: [4.7879791259765625, 52.96497693568997]
-  zoom: 13
+  center: [29.91666666685, 7.346606666650002]
+  zoom: 1
 ---
 
 Professor Vening Meinesz left the port of Den Helder along with captain D.C.M. Hetterschij and 33 sailors aboard the submarine _HNLMS K-XVIII_. This would be the longest expedition Vening Meinesz ever made aboard a submarine. The *K-XVIII’s *final destination was Surabaya, but instead of the normal route via the Suez Canal, the submarine visited several continents along the way, taking a detour that took eight months. The _K-XVIII_ arrived at Surabaya in July 1935 after travelling over 23.000 miles across the Earth’s oceans. The Royal Netherlands Navy and Vening Meinesz had worked together on other expeditions before, but this was the most spectacular journey.
