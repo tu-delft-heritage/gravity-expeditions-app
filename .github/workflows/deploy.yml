@@ -19,6 +19,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Cache IIIF derivatives
+        id: dlcs-cache
+        uses: actions/cache@v4
+        with:
+          path: static/iiif
+          key: dlcs-${{ runner.os }}-${{ github.run_id }} # Can use time based key as well
+          restore-keys: |
+            dlcs-${{ runner.os }}
+
+      - name: Delete previous cache
+        run: gh cache delete dlcs-${{ runner.os }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -33,6 +49,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
+
+      - name: Create IIIF derivatives
+        run: pnpm iiif
 
       - name: Build
         run: pnpm build
