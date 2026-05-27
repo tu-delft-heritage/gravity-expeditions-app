@@ -100,9 +100,9 @@
 </svelte:head>
 
 <div
-  class="w-screen h-screen grid grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
+  class="w-screen h-screen grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-[1fr_480px] xl:grid-cols-[1fr_600px]"
 >
-  <div class="row-span-full">
+  <div class="min-h-0 md:row-span-full">
     <Map {chapters} {index} />
   </div>
 
@@ -110,7 +110,7 @@
     bind:clientWidth
     bind:offsetHeight
     bind:this={scrollContainer}
-    class="row-start-1 bg-white/80 pl-5 pr-5 overflow-auto"
+    class="row-start-2 min-h-0 bg-white/80 pl-5 pr-5 overflow-auto md:row-start-1"
   >
     {#each chapters as chapter, index}
       {@const Component = chapter.Component}
