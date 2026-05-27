@@ -549,9 +549,10 @@
   });
 
   onDestroy(() => {
-    console.log("Destroy triggered???");
-    // warpedMapLayer.clear();
-    // map.remove();
+    if (mapLoaded) {
+      warpedMapLayer.clear();
+      map.remove();
+    }
   });
 </script>
 
