@@ -1,0 +1,82 @@
+{
+  "id": "https://annotations.allmaps.org/maps/9ec3af3ad694c307",
+  "type": "Annotation",
+  "@context": [
+    "http://iiif.io/api/extension/georef/1/context.json",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "created": "2026-03-23T14:26:47.245Z",
+  "modified": "2026-03-23T14:26:47.245Z",
+  "motivation": "georeferencing",
+  "target": {
+    "type": "SpecificResource",
+    "source": {
+      "id": "https://tu-delft-heritage.github.io/gravity-expeditions-app/iiif/maps/GEASv4_bathymetric_chart_atlantic_ocean",
+      "type": "ImageService3",
+      "height": 6703,
+      "width": 8289
+    },
+    "selector": {
+      "type": "SvgSelector",
+      "value": "<svg width=\"8289\" height=\"6703\"><polygon points=\"239,476 238,6482 8083,6474 8073,484\" /></svg>"
+    }
+  },
+  "body": {
+    "type": "FeatureCollection",
+    "transformation": {
+      "type": "helmert"
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [2769, 4676]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-60.9161555056305, 10.826913027648345]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [3458, 1066]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-53.1477642396414, 46.63399535213102]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [6652, 4607]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-16.39936259854821, 11.528154748619727]
+        }
+      }
+    ],
+    "_allmaps": {
+      "id": "https://annotations.allmaps.org/maps/9ec3af3ad694c307",
+      "version": "https://annotations.allmaps.org/maps/9ec3af3ad694c307@a42fcbae22e43b68",
+      "image": {
+        "id": "https://annotations.allmaps.org/images/03a15c12d8876d3a",
+        "version": "https://annotations.allmaps.org/images/03a15c12d8876d3a@698f45216bd80376",
+        "canvases": [
+          {
+            "id": "https://annotations.allmaps.org/canvases/7cb356dbffdba19a",
+            "manifests": [
+              {
+                "id": "https://annotations.allmaps.org/manifests/9a5e783fac110bdf"
+              }
+            ]
+          }
+        ]
+      },
+      "scale": 0.000833,
+      "area": 67786625309721.34
+    }
+  }
+}

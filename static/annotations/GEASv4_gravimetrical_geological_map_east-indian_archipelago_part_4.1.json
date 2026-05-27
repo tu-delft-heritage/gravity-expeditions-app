@@ -1,0 +1,92 @@
+{
+  "id": "https://annotations.allmaps.org/maps/389ef7877503283a",
+  "type": "Annotation",
+  "@context": [
+    "http://iiif.io/api/extension/georef/1/context.json",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "created": "2026-03-23T14:36:50.277Z",
+  "modified": "2026-03-23T14:36:50.277Z",
+  "motivation": "georeferencing",
+  "target": {
+    "type": "SpecificResource",
+    "source": {
+      "id": "https://tu-delft-heritage.github.io/gravity-expeditions-app/iiif/maps/GEASv4_gravimetrical_geological_map_east-indian_archipelago_part_4.1",
+      "type": "ImageService3",
+      "height": 3430,
+      "width": 7228
+    },
+    "selector": {
+      "type": "SvgSelector",
+      "value": "<svg width=\"7228\" height=\"3430\"><polygon points=\"168,331 173,3269 7055,3270 7047,327\" /></svg>"
+    }
+  },
+  "body": {
+    "type": "FeatureCollection",
+    "transformation": {
+      "type": "helmert"
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [2264, 2304]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [106.83338268797132, -6.165831148612696]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [6588, 2633]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [137.67135480826852, -8.449829936091575]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [4069, 1539]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [119.73769170746287, -0.6607350277397472]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [1838, 1273]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [103.85699279613266, 1.2837657508873832]
+        }
+      }
+    ],
+    "_allmaps": {
+      "id": "https://annotations.allmaps.org/maps/389ef7877503283a",
+      "version": "https://annotations.allmaps.org/maps/389ef7877503283a@d90ca6e5cd95fd1b",
+      "image": {
+        "id": "https://annotations.allmaps.org/images/2db9a85a9221869b",
+        "version": "https://annotations.allmaps.org/images/2db9a85a9221869b@9d8176637d1a8bb8",
+        "canvases": [
+          {
+            "id": "https://annotations.allmaps.org/canvases/ae7bdb4dae43c9a1",
+            "manifests": [
+              {
+                "id": "https://annotations.allmaps.org/manifests/9a5e783fac110bdf"
+              }
+            ]
+          }
+        ]
+      },
+      "scale": 0.001234,
+      "area": 13292387067512
+    }
+  }
+}

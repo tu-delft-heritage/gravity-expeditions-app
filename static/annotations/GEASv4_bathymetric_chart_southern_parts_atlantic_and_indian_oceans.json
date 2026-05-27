@@ -1,0 +1,92 @@
+{
+  "id": "https://annotations.allmaps.org/maps/356ad1feb851a0b0",
+  "type": "Annotation",
+  "@context": [
+    "http://iiif.io/api/extension/georef/1/context.json",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "created": "2026-03-23T14:29:30.356Z",
+  "modified": "2026-03-23T14:29:30.356Z",
+  "motivation": "georeferencing",
+  "target": {
+    "type": "SpecificResource",
+    "source": {
+      "id": "https://tu-delft-heritage.github.io/gravity-expeditions-app/iiif/maps/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans",
+      "type": "ImageService3",
+      "height": 3419,
+      "width": 12963
+    },
+    "selector": {
+      "type": "SvgSelector",
+      "value": "<svg width=\"12963\" height=\"3419\"><polygon points=\"108,483 107,3310 12872,3328 12882,80 9932,76 9931,497\" /></svg>"
+    }
+  },
+  "body": {
+    "type": "FeatureCollection",
+    "transformation": {
+      "type": "helmert"
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [1210, 2002]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-43.203331672182, -22.954998483003394]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [11565, 2796]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [115.00708929224481, -33.53109639593368]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [11024, 886]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [106.8326909596322, -6.159029533142984]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [5250, 2845]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.652384649670125, -34.06540920713739]
+        }
+      }
+    ],
+    "_allmaps": {
+      "id": "https://annotations.allmaps.org/maps/356ad1feb851a0b0",
+      "version": "https://annotations.allmaps.org/maps/356ad1feb851a0b0@49773130995181b6",
+      "image": {
+        "id": "https://annotations.allmaps.org/images/180d40f43f608b6f",
+        "version": "https://annotations.allmaps.org/images/180d40f43f608b6f@5b49a34b43c88ecb",
+        "canvases": [
+          {
+            "id": "https://annotations.allmaps.org/canvases/1dcafba8e350ebaf",
+            "manifests": [
+              {
+                "id": "https://annotations.allmaps.org/manifests/9a5e783fac110bdf"
+              }
+            ]
+          }
+        ]
+      },
+      "scale": 0.000506,
+      "area": 145706745466753.62
+    }
+  }
+}
