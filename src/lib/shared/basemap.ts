@@ -54,7 +54,6 @@ export const getStyleWithoutLayers = (flavor: DefaultFlavors) => {
         paint: {
           "background-color": backgroundColors[flavor],
           "background-opacity": 1,
-          // "background-opacity-transition": { duration: DURATION },
         },
       },
     ],

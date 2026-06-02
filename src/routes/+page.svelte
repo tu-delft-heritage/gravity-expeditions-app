@@ -3,6 +3,8 @@
   import chapters from "$lib/shared/chapters";
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
+  import { DEFAULT_SOURCES } from "$lib/shared/settings";
+  import { getGeoJsonLayers } from "$lib/shared/geojson";
 
   let initialHash: string | undefined = $state(undefined);
   let index: number = $state(0);
@@ -17,6 +19,11 @@
   let destination: string | undefined = $derived(initialHash || undefined);
   let visibleElements: string[] = $state(new Array());
   let isDarkMode: boolean | undefined = $state(undefined);
+
+  // WIP!
+  let layers = Object.keys(DEFAULT_SOURCES).flatMap((sourceId) =>
+    getGeoJsonLayers(sourceId, "visible"),
+  );
 
   const padding = $derived({
     top: 25,
@@ -116,7 +123,13 @@
   <div class="min-h-0 md:row-span-full">
     {#if isDarkMode !== undefined}
       {#key isDarkMode}
-        <Map {chapters} {index} {isDarkMode} />
+        <Map
+          {chapters}
+          {index}
+          {isDarkMode}
+          sources={DEFAULT_SOURCES}
+          {layers}
+        />
       {/key}
     {/if}
   </div>

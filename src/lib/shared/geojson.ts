@@ -1,5 +1,5 @@
 import type maplibregl from "maplibre-gl";
-import { COLORS } from "./settings";
+import { DEFAULT_COLORS } from "./settings";
 
 // https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0
 type SimpleStyleColorProperty = "marker-color" | "stroke" | "fill";
@@ -11,17 +11,17 @@ type MapLibreExpression = maplibregl.ExpressionSpecification;
 type LayerSpecification = maplibregl.LayerSpecification;
 
 const SIMPLESTYLE_FALLBACKS = {
-  markerColor: COLORS.green.fill,
+  markerColor: DEFAULT_COLORS.green.fill,
   markerRadius: {
     small: 6,
     medium: 8,
     large: 12,
   },
-  stroke: COLORS.green.stroke,
+  stroke: DEFAULT_COLORS.green.stroke,
   strokeOpacity: 1,
   strokeWidth: 8,
   circleStrokeWidth: 6,
-  fill: COLORS.green.fill,
+  fill: DEFAULT_COLORS.green.fill,
   fillOpacity: 0.6,
 } as const;
 
@@ -69,14 +69,17 @@ const getSimpleStyleMarkerRadius = (): MapLibreExpression => [
   SIMPLESTYLE_FALLBACKS.markerRadius.medium,
 ];
 
-export const getGeoJsonLayers = (sourceId: string) => {
+export const getGeoJsonLayers = (
+  sourceId: string,
+  visibility?: "none" | "visible" = "visible",
+) => {
   return [
     {
       id: `user-${sourceId}-fill`,
       type: "fill",
       source: sourceId,
       layout: {
-        visibility: "none",
+        visibility,
       },
       paint: {
         "fill-color": getSimpleStyleColor("fill", SIMPLESTYLE_FALLBACKS.fill),
@@ -94,7 +97,7 @@ export const getGeoJsonLayers = (sourceId: string) => {
       type: "line",
       source: sourceId,
       layout: {
-        visibility: "none",
+        visibility,
         "line-join": "round",
         "line-cap": "round",
       },
@@ -122,7 +125,7 @@ export const getGeoJsonLayers = (sourceId: string) => {
       type: "circle",
       source: sourceId,
       layout: {
-        visibility: "none",
+        visibility,
       },
       paint: {
         "circle-radius": getSimpleStyleMarkerRadius(),
@@ -153,7 +156,7 @@ export const getGeoJsonLayers = (sourceId: string) => {
       type: "symbol",
       source: sourceId,
       layout: {
-        visibility: "none",
+        visibility,
         "icon-image": ["get", "icon-image"],
       },
       filter: ["all", ["==", "$type", "Point"], ["has", "icon-image"]],

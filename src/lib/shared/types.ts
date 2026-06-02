@@ -1,5 +1,4 @@
 import type { MapLibreWarpedMapLayerOptions } from "@allmaps/maplibre";
-import type { SourceSpecification } from "maplibre-gl";
 
 export type WarpedMapProps = {
   type?: "Image";
@@ -13,7 +12,14 @@ export type WarpedMapProps = {
   wiggle?: boolean;
 };
 
-export type MapViewProps = {
+export type MapLayerProps = {
+  layer: string;
+  opacity?: number;
+  visibility?: "visible" | "none";
+  duration?: number;
+};
+
+export type MapChapterProps = {
   location?: {
     zoom?: number;
     center?: [number, number];
@@ -28,10 +34,9 @@ export type MapViewProps = {
   caption?: string;
   freeze?: boolean;
   padding?: number;
+  fit?: "cover" | "contain" | "equal" | undefined;
   hideBasemap?: boolean;
   contain?: boolean;
-  sources?: {
-    [key: string]: SourceSpecification;
-  };
   warpedMaps?: WarpedMapProps[] | WarpedMapProps;
+  layers?: MapLayerProps[] | MapLayerProps;
 };

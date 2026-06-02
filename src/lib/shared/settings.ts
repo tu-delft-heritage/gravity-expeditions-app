@@ -2,13 +2,14 @@ import type { MapLibreWarpedMapLayerOptions } from "@allmaps/maplibre";
 import baseUrl from "$lib/shared/base-url";
 import type { SourceSpecification } from "maplibre-gl";
 
-export const DURATION = 4000;
-export const PADDING = 25;
-export const FLAVOR = "dark";
-export const LOCALE = "en";
+export const DEFAULT_DURATION = 4000;
+export const DEFAULT_PADDING = 25;
+export const DEFAULT_LIGHT_FLAVOR = "light";
+export const DEFAULT_DARK_FLAVOR = "dark";
+export const DEFAULT_LOCALE = "en";
 export const ANIMATE = true;
 
-export const COLORS = {
+export const DEFAULT_COLORS = {
   green: {
     stroke: "#64c18f",
     fill: "#c1e6d2",
@@ -46,37 +47,31 @@ export const DEFAULT_WARPED_MAP_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> 
     colorize: false,
     removeColor: false,
     saturation: 1,
-    renderAppliableMask: false,
-    renderFullMask: false,
+    opacity: 1,
     renderMask: false,
+    renderFullMask: false,
     renderGcps: false,
     renderTransformedGcps: false,
     renderVectors: false,
     renderGrid: false,
     transformationType: undefined,
-    // Fix until undefined works
-    distortionMeasure: "",
+    distortionMeasure: undefined,
   };
 
-export const SOURCES: { [key: string]: SourceSpecification } = {
+export const DEFAULT_SOURCES: { [key: string]: SourceSpecification } = {
   route: {
     type: "geojson",
     data: `${baseUrl}/geojson/route.geojson`,
   },
 };
 
-export const LAYERS = [
-  {
-    id: "route",
-    type: "line",
-    source: "route",
-    layout: {
-      "line-join": "round",
-      "line-cap": "round",
-    },
-    paint: {
-      "line-color": COLORS.green.stroke,
-      "line-width": 8,
-    },
-  },
-];
+// From https://github.com/digidem/maplibre-storymap/blob/main/demo/index.html
+export const LAYER_TYPES = {
+  fill: ["fill-opacity"],
+  line: ["line-opacity"],
+  circle: ["circle-opacity", "circle-stroke-opacity"],
+  symbol: ["icon-opacity", "text-opacity"],
+  raster: ["raster-opacity"],
+  "fill-extrusion": ["fill-extrusion-opacity"],
+  heatmap: ["heatmap-opacity"],
+};
