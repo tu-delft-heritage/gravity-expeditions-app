@@ -7,6 +7,7 @@ export const DEFAULT_PADDING = 25;
 export const DEFAULT_LIGHT_FLAVOR = "light";
 export const DEFAULT_DARK_FLAVOR = "dark";
 export const DEFAULT_LOCALE = "en";
+export const DEFAULT_OVERVIEW_TILES_RESOLUTION = 3072 * 3072;
 export const ANIMATE = true;
 
 export const DEFAULT_COLORS = {

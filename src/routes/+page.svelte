@@ -129,6 +129,7 @@
           {isDarkMode}
           sources={DEFAULT_SOURCES}
           {layers}
+          anticipate
         />
       {/key}
     {/if}

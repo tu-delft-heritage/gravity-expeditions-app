@@ -9,7 +9,10 @@
     CenterZoomBearing,
   } from "maplibre-gl";
 
-  import { WarpedMapLayer } from "@allmaps/maplibre";
+  import {
+    WarpedMapLayer,
+    type MapLibreWarpedMapLayerOptions,
+  } from "@allmaps/maplibre";
   import { createFauxGeoreferencedMap } from "$lib/shared/utils";
   import { getLayers, getStyleWithoutLayers } from "$lib/shared/basemap";
   import { getValueAsArray } from "$lib/shared/utils";
@@ -21,6 +24,7 @@
     DEFAULT_DURATION,
     DEFAULT_COLORS,
     DEFAULT_DARK_FLAVOR,
+    DEFAULT_OVERVIEW_TILES_RESOLUTION,
     LAYER_TYPES,
   } from "$lib/shared/settings";
 
@@ -38,6 +42,7 @@
     layers?: LayerSpecification[] | LayerSpecification;
     highlight?: string;
     showLabels?: boolean;
+    anticipate?: boolean;
   };
 
   let {
@@ -50,6 +55,7 @@
     sources,
     highlight,
     showLabels,
+    anticipate,
   }: Props = $props();
 
   let start = true;
@@ -101,7 +107,13 @@
     lang: locale ? locale : DEFAULT_LOCALE,
     labelsOnly: true,
   });
-  const warpedMapLayer = new WarpedMapLayer({ visible: false });
+  const warpedMapLayerOptions: Partial<MapLibreWarpedMapLayerOptions> = {
+    visible: false,
+    anticipateVisibility: anticipate ? true : false,
+    overviewTilesSelection: "lowest",
+    overviewTilesMaxResolution: DEFAULT_OVERVIEW_TILES_RESOLUTION,
+  };
+  const warpedMapLayer = new WarpedMapLayer(warpedMapLayerOptions);
 
   async function loadAnnotations(chapters: MapChapterProps[]) {
     if (debug) {
@@ -138,7 +150,9 @@
         } else {
           // Add the georeference annotation
           return warpedMapLayer
-            .addGeoreferenceAnnotationByUrl(url, { visible: false })
+            .addGeoreferenceAnnotationByUrl(url, {
+              visible: false,
+            })
             .then((ids) => {
               const stringIds = ids.filter(
                 (i): i is string => typeof i === "string",
