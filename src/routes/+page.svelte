@@ -3,7 +3,7 @@
   import chapters from "$lib/shared/chapters";
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
-  import { DEFAULT_SOURCES } from "$lib/shared/settings";
+  import { DEFAULT_DURATION, DEFAULT_SOURCES } from "$lib/shared/settings";
   import { getGeoJsonLayers } from "$lib/shared/geojson";
 
   let initialHash: string | undefined = $state(undefined);
@@ -130,6 +130,7 @@
           sources={DEFAULT_SOURCES}
           {layers}
           anticipate
+          duration={DEFAULT_DURATION}
         />
       {/key}
     {/if}
