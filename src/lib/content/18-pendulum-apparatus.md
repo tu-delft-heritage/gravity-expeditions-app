@@ -26,4 +26,4 @@ View the object in TU Delft Library's [special collections](https://heritage.tud
 
 A short film has been made to explain the workings of the pendulum apparatus by the Vening Meinesz project team of the TU Delft in collaboration with the New Media Centre TU Delft.
 
-![Desciption of prof. Vening Meinesz' pendulum apparatus named Gouden Kalf](https://www.youtube.com/watch?v=C_91XgjvqxA)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C_91XgjvqxA?si=2CyJLtT1qqE8fh9H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
