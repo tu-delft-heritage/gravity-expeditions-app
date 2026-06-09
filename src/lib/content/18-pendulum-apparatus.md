@@ -24,6 +24,6 @@ His apparatus would be the only way to measure the gravity field with such high 
 
 View the object in TU Delft Library's [special collections](https://heritage.tudelft.nl/objects/03268153-c9a0-4e81-9771-0566cfa4f3d1).
 
-A short film has been made to explain the workings of the pendulum apparatus by the Vening Meinesz project team of the TU Delft in collaboration with the New Media Centre TU Delft.
+<!-- A short film has been made to explain the workings of the pendulum apparatus by the Vening Meinesz project team of the TU Delft in collaboration with the New Media Centre TU Delft. -->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C_91XgjvqxA?si=2CyJLtT1qqE8fh9H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/C_91XgjvqxA?si=2CyJLtT1qqE8fh9H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
