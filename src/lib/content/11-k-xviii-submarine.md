@@ -16,6 +16,7 @@ _Saturday 1st of Juli 1933 – Vessel is declared ready for test operations by C
 
 In those days, these submarines were built according to hand-drawn blueprints, because programmable computers had yet to be invented. Also the strength and construction calculations were done by hand. These drawings can be viewed with the following link
 
+![A 3D model of the K-XVIII from drawings of the Fijenoord docks](images/illustrations/1.jpg)
 <!-- Link to the 3D model of the K-XVIII -->
 
 Captain Hetterschij was the first commanding officer of the K-XVIII with orders to sail the newly constructed submarine to the East Indies. The K-class submarines were designed for the colonial waters (Dutch: “Kolonie”), where they were dedicated to protect these areas. In operation, the K-XVIII could host 38 crewmen (including 9 men from the Indies) that were well trained in diving and operations. The K-class was mainly used for patrolling the national waters of East Indies (Indonesia). The table shows some of it characteristics.
