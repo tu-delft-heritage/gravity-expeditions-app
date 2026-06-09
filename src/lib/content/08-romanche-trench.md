@@ -14,7 +14,7 @@ On the 11th of January 1935, the K18 sailed over the Romanche Trench. It would b
 
 > None of the gravity profiles gives any indication of great tectonic phenomena in this area. It seems indicated, therefore, to think of a volcanic origin of this remarkable feature in the mid ocean and to interpret it as a huge caldeira.
 
-If the professor had crossed the Romance Trench from east to west, he might have concluded otherwise. Later, it was shown that the Romanche Trench is part of a global system of faults that is needed for plate motion. The Romanche Trench is now known to be a transform fault, which was defined by Wilson (1966) in one of his famous papers that explained the complete plate tectonic cycle.
+If the professor had crossed the Romanche Trench from east to west, he might have concluded otherwise. Later, it was shown that the Romanche Trench is part of a global system of faults that is needed for plate motion. The Romanche Trench is now known to be a transform fault, which was defined by Wilson (1966) in one of his famous papers that explained the complete plate tectonic cycle.
 
 ![The K-XVIII sailed over the Romanche Trench during the crossing from Dakar to Pernambuco. The Romanche Trench is a large transform fault of the Mid Atlantic Ridge. Professor Vening Meinesz was the first to measure its gravity signature (station 563).](/images/illustrations/romanche-trench-1.jpg)
 
