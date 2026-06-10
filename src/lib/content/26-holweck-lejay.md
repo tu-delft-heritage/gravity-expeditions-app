@@ -12,6 +12,8 @@ warpedMaps:
 
 During the voyage, Professor Vening Meinesz also had a smaller device with him to perform gravity measurements on land. The heavy pendulum apparatus was difficult to take out of the submarine and this was therefore only done during the stay at Cape Town. For land observations the Holweck-Lejay gravimeter was lent by the ‘Bataafse Petroleum Maatschappij’ (later merged to Shell), such that the professor was also able to observe the gravity field on land. This much smaller device, 15x15x30 cm in size, was much easier to take on land. The Holweck-Lejay gravimeter needed a very stable platform, like a concrete floor or some church steps as can be seen in the following clip.
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/gLpgZArqtXw?si=gPYueuiE1gYasZc6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 The measurement principle of the Holweck-Lejay gravimeter was an oscillating inversed-pendulum in a vacuum chamber. From the period of the oscillating pendulum, Vening Meinesz was able to compute the local gravity field. For timing this period he took the Ullysses Nardin 17984 chronometer with him. After one hour, he would know the gravity with an accuracy of around 5 mGal.
 
 ![sThe Holweck-Lejay gravimeter is shown on the left and the Ullysses Nardin 17984 chronometer is shown on the right.](/images/illustrations/holweck-lejay-1.jpg)
