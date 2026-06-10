@@ -58,8 +58,7 @@ Felix Andries Vening Meinesz was born in Scheveningen on 30 July 1887. He was th
 - 1923 K.II To the Dutch-Indies via Suez Canal
 - 1925 K.XI Vening Meinesz until Tunis
 - 1926-1927 K.XIII To the Dutch-Indies via Panama Canal
-- 1927 K.XIII To Christmas Island (350 km south of
-- Java) > Java oceanic trench
+- 1927 K.XIII To Christmas Island (350 km south of Java) > Java oceanic trench
 - 1928 S.21 (US Navy) Gulf of Mexico
 - 1929-1930 K.XIII Indonesian Archipelago
 - 1931 _Sommrtgibili_, _crociera_, _“Vettor Pisani”_ (Italian Submarine) Mediterranean Sea
