@@ -8,6 +8,8 @@ location:
 
 Professor Vening Meinesz left the port of Den Helder along with captain D.C.M. Hetterschij and 33 sailors aboard the submarine _HNLMS K-XVIII_. This would be the longest expedition Vening Meinesz ever made aboard a submarine. The *K-XVIII’s *final destination was Surabaya, but instead of the normal route via the Suez Canal, the submarine visited several continents along the way, taking a detour that took eight months. The _K-XVIII_ arrived at Surabaya in July 1935 after travelling over 23.000 miles across the Earth’s oceans. The Royal Netherlands Navy and Vening Meinesz had worked together on other expeditions before, but this was the most spectacular journey.
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/C_91XgjvqxA?si=2CyJLtT1qqE8fh9H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Felix Andries Vening Meinesz
 
 Felix Andries Vening Meinesz (The Hague July 30, 1887 - Amersfoort August 10, 1966) was a Dutch geophysicist and geodesist. He is known for his invention of a precise method for measuring [gravity](https://en.wikipedia.org/wiki/Gravity) on a moving vessel. Thanks to his invention, it became possible to measure gravity at sea, which led him to the discovery of gravity anomalies above the ocean floor.
