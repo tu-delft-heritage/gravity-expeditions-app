@@ -16,7 +16,7 @@ During the voyage, Professor Vening Meinesz also had a smaller device with him t
 
 The measurement principle of the Holweck-Lejay gravimeter was an oscillating inversed-pendulum in a vacuum chamber. From the period of the oscillating pendulum, Vening Meinesz was able to compute the local gravity field. For timing this period he took the Ullysses Nardin 17984 chronometer with him. After one hour, he would know the gravity with an accuracy of around 5 mGal.
 
-![sThe Holweck-Lejay gravimeter is shown on the left and the Ullysses Nardin 17984 chronometer is shown on the right.](/images/illustrations/holweck-lejay-1.jpg)
+![The Holweck-Lejay gravimeter is shown on the left and the Ullysses Nardin 17984 chronometer is shown on the right.](/images/illustrations/holweck-lejay-1.jpg)
 
 The light source made it possible to observe the period (T) of the pendulum, which was measured with a chronometer. The value of the gravity could be obtained with the following relation:
 
