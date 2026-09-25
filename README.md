@@ -30,23 +30,24 @@ Links:
 
 ## Developing
 
-This app uses [SvelteKit](https://svelte.dev/tutorial/kit/introducing-sveltekit) as application framework.
-
-Install dependencies with `pnpm install`, start a development server:
+Content for [Allmaps Slides](https://github.com/allmaps/slides). Use Node 24 and pnpm 10; run these commands from the Slides repository:
 
 ```sh
-pnpm run dev
-
-# or start the server and open the app in a new browser tab
-pnpm run dev -- --open
+git clone --recurse-submodules https://github.com/allmaps/slides.git
+cd slides
+pnpm install
+pnpm exec slides iiif ./content/gravity-at-sea
+pnpm exec slides thumbnails ./content/gravity-at-sea
+pnpm exec slides dev ./content/gravity-at-sea
 ```
+
+Edit `content/gravity-at-sea/slideshows/` and `slides.config.yml`. Repeat the image commands when their sources change.
 
 ## Building
 
-To create a production version of your app:
-
 ```sh
-pnpm run build
+pnpm exec slides build ./content/gravity-at-sea
+pnpm exec slides preview ./content/gravity-at-sea
 ```
 
-You can preview the production build with `pnpm run preview`.
+Pushes to `main` deploy to GitHub Pages using the shared Slides app. The workflow caches IIIF images and thumbnails; `SLIDES_REF` can select a framework revision.

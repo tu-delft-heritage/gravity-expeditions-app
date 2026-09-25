@@ -2,39 +2,5 @@
   "name": "gravity-expeditions-app",
   "private": true,
   "version": "0.0.1",
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "iiif": "node scripts/build-iiif.ts",
-    "preview": "vite preview",
-    "prepare": "svelte-kit sync || echo ''",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-  },
-  "devDependencies": {
-    "@allmaps/annotation": "1.0.0-beta.36",
-    "@iiif/builder": "^2.0.1",
-    "@sveltejs/adapter-auto": "^7.0.0",
-    "@sveltejs/kit": "^2.50.2",
-    "@sveltejs/vite-plugin-svelte": "^6.2.4",
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.0",
-    "@types/node": "^25.9.1",
-    "mdsvex": "^0.12.6",
-    "sharp": "^0.34.5",
-    "svelte": "^5.51.0",
-    "svelte-check": "^4.3.6",
-    "tailwindcss": "^4.2.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1"
-  },
-  "dependencies": {
-    "@allmaps/maplibre": "1.0.0-beta.43",
-    "@protomaps/basemaps": "^5.7.2",
-    "@sveltejs/adapter-static": "^3.0.10",
-    "@turf/turf": "^7.3.5",
-    "maplibre-gl": "^5.19.0",
-    "pmtiles": "^4.4.1"
-  }
+  "type": "module"
 }
