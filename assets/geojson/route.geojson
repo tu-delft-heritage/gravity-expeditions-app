@@ -277,6 +277,9 @@
     ]
   },
   "type": "Feature",
-  "id": null,
-  "properties": {}
+  "properties": {
+    "stroke": "#64c18f",
+    "stroke-width": 8,
+    "stroke-opacity": 1
+  }
 }
