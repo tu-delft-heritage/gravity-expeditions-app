@@ -1,5 +1,5 @@
 ---
-title: "Gravity Expeditions at Sea"
+title: "Introduction"
 description: "The K-XVIII expedition was a Dutch geodetic and geophysical expedition to East Indies from 14 November 1934 until 11 July 1935. On board was the Dutch scientist Felix Andries Vening Meinesz with his pendulum apparatus the ‘Golden Calf’ to measure the gravity field of the Earth."
 location:
   center: [29.91666666685, 7.346606666650002]

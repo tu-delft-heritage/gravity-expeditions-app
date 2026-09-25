@@ -1,0 +1,28 @@
+title: Gravity at Sea
+description: The K-XVIII expedition from Den Helder to Surabaya, told through maps, images, and chapters.
+main: main
+credits: credits.md
+
+slideshows:
+  - id: main
+    path: slideshows/00-main
+    title: Gravity Expeditions at Sea
+    description: The K-XVIII expedition from Den Helder to Surabaya
+
+sources:
+  route:
+    type: geojson
+    path: assets/geojson/route.geojson
+
+site:
+  basePath: ${SLIDES_BASE_PATH}
+  publicUrl: ${SLIDES_PUBLIC_URL}
+
+protomaps:
+  key: cada70bc6a47dab4
+
+interface: {}
+
+iiif:
+  tileSize: 1024
+  webp: false

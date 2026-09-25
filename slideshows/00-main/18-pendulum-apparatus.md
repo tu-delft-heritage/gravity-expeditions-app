@@ -26,5 +26,5 @@ View the object in TU Delft Library's [special collections](https://heritage.tud
 
 A short film has been made to explain the workings of the pendulum apparatus by the Vening Meinesz project team of the TU Delft in collaboration with the New Media Centre TU Delft. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AcFjOILDiEs?si=P9I4c3C1YvvOkG5b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/AcFjOILDiEs?si=P9I4c3C1YvvOkG5b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
