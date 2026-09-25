@@ -43,6 +43,10 @@ pnpm exec slides dev ./content/gravity-at-sea
 
 Edit `content/gravity-at-sea/slideshows/` and `slides.config.yml`. Repeat the image commands when their sources change.
 
+The expedition route is a shared `sources.route` in `slides.config.yml`. Edit
+`assets/geojson/route.geojson` for its geometry and SimpleStyle properties
+(`stroke`, `stroke-width`, `stroke-opacity`); these also appear in slide thumbnails.
+
 ## Building
 
 ```sh

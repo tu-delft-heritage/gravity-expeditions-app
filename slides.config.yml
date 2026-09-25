@@ -8,15 +8,26 @@ slideshows:
     path: slideshows/00-main
     title: Gravity Expeditions at Sea
     description: The K-XVIII expedition from Den Helder to Surabaya
+    start:
+      location:
+        center: [0, 0]
+        zoom: 3
+      warpedMaps:
+        - url: annotations/GEASv4_bathymetric_chart_atlantic_ocean.json
+          homepage: https://archive.org/details/gravity-expeditions-at-sea
+          caption: Bathymetric Chart of the Atlantic ocean
+        - url: annotations/GEASv4_bathymetric_chart_southern_parts_atlantic_and_indian_oceans.json
+          homepage: https://archive.org/details/gravity-expeditions-at-sea
+          caption: Bathymetric Chart of the Southern parts of the Atlantic and Indian oceans
 
+# Shared by every slide; appearance is set by the GeoJSON's SimpleStyle properties.
 sources:
   route:
     type: geojson
     path: assets/geojson/route.geojson
 
 site:
-  basePath: ${SLIDES_BASE_PATH}
-  publicUrl: ${SLIDES_PUBLIC_URL}
+  publicUrl: https://tu-delft-heritage.github.io/gravity-expeditions-app/
 
 protomaps:
   key: cada70bc6a47dab4
