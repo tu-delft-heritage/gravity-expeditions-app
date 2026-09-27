@@ -1,5 +1,9 @@
-title: Gravity at Sea
-description: The K-XVIII expedition from Den Helder to Surabaya, told through maps, images, and chapters.
+title: 
+  long: Gravity Expeditions at Sea
+  short: Gravity at Sea
+description: 
+  long: The K-XVIII expedition from Den Helder to Surabaya, told through maps, images, and chapters.
+  short: The K-XVIII expedition from Den Helder to Surabaya
 main: main
 credits: credits.md
 
@@ -7,7 +11,7 @@ slideshows:
   - id: main
     path: slideshows/00-main
     title: Gravity Expeditions at Sea
-    description: The K-XVIII expedition from Den Helder to Surabaya
+    description: The K-XVIII expedition from Den Helder to Surabaya, told through maps, images, and chapters.
     start:
       location:
         center: [0, 0]

@@ -2,9 +2,9 @@
 title: Credits
 ---
 
-This application presenting the expeditions of Dutch geophysicist and geodesist Felix Andries Vening Meinesz (1887-1966) was originally published in 2014 as part of [Expeditie Wikipedia](https://expeditiewikipedia.nl/). The original application has been rebuilt from scratch, and updated with new content.
+This narrative map presenting the expeditions of Dutch geophysicist and geodesist Felix Andries Vening Meinesz (1887-1966) was originally published in 2014 as part of [Expeditie Wikipedia](https://expeditiewikipedia.nl/). The original application has been rebuilt from scratch, and updated with new content.
 
-Texts by [Bart Root](https://www.tudelft.nl/staff/b.c.root/) (Faculty of Aerospace Engineering, TU Delft) and [Rozemarijn Vlijm](https://www.linkedin.com/in/rozemarijn-vlijm-8b1426128/). Development by [Jules Schoonman](https://www.tudelft.nl/staff/j.a.schoonman/) (TU Delft Library).
+Texts by [Bart Root](https://www.tudelft.nl/staff/b.c.root/) (Faculty of Aerospace Engineering, TU Delft) and [Rozemarijn Vlijm](https://www.linkedin.com/in/rozemarijn-vlijm-8b1426128/). Development by [Jules Schoonman](https://www.tudelft.nl/staff/j.a.schoonman/) (TU Delft Library). Videos by the [NewMedia Center](https://newmediacentre.tudelft.nl/) of TU Delft Library.
 
 For more information:
 
