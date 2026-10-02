@@ -1,0 +1,7 @@
+# This content repository has its own dependency lockfile, including as a submodule.
+packages: []
+
+onlyBuiltDependencies:
+  - '@maplibre/maplibre-gl-native'
+  - esbuild
+  - sharp

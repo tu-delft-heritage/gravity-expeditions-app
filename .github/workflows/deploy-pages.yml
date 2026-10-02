@@ -36,21 +36,8 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Check out slides
-        uses: actions/checkout@v7
-        with:
-          repository: allmaps/slides
-          ref: ${{ vars.SLIDES_REF || 'main' }}
-          sparse-checkout: |
-            /*
-            !/content/
-            !/content/**
-          sparse-checkout-cone-mode: false
-
       - name: Check out content
         uses: actions/checkout@v7
-        with:
-          path: content/gravity-at-sea
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v6
@@ -65,7 +52,11 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
 
       - name: Set up native renderer
-        run: sudo sh packages/static-render/scripts/install-system-deps.sh
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            xvfb xauth libopengl0 libglx0 libcurl4t64 libjpeg-turbo8 \
+            libuv1t64 libx11-6 libxext6 libwebp7 libicu74 libpng16-16t64
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -76,59 +67,59 @@ jobs:
         uses: actions/cache/restore@v6
         with:
           path: node_modules/.vite/slides/iiif
-          key: iiif-v2-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: iiif-v3-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
-            iiif-v2-${{ runner.os }}
+            iiif-v3-${{ runner.os }}
 
       - name: Restore remote annotations
         if: ${{ !inputs.reset_annotations_cache }}
         uses: actions/cache/restore@v6
         with:
           path: node_modules/.vite/slides/annotations
-          key: annotations-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: annotations-v2-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
-            annotations-v1-${{ runner.os }}-
+            annotations-v2-${{ runner.os }}-
 
       - name: Restore thumbnails and map sources
         if: ${{ !inputs.reset_thumbnails_cache }}
         uses: actions/cache/restore@v6
         with:
           path: node_modules/.vite/slides/thumbnails
-          key: thumbnails-v3-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: thumbnails-v4-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
-            thumbnails-v3-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+            thumbnails-v4-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v6
 
       - name: Build static site
         id: build-static-site
         env:
-          CONTENT_PATH: content/gravity-at-sea
-          PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
-          PUBLIC_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-        run: xvfb-run -a pnpm exec slides build "$CONTENT_PATH" --outDir dist/site
+          PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PUBLIC_URL: ${{ steps.pages.outputs.base_url }}
+        run: xvfb-run -a pnpm exec slides build . --outDir dist/site
 
       - name: Save IIIF derivatives
         if: ${{ success() || steps.build-static-site.outcome == 'failure' }}
         uses: actions/cache/save@v6
         with:
           path: node_modules/.vite/slides/iiif
-          key: iiif-v2-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: iiif-v3-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save remote annotations
         if: ${{ success() || steps.build-static-site.outcome == 'failure' }}
         uses: actions/cache/save@v6
         with:
           path: node_modules/.vite/slides/annotations
-          key: annotations-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: annotations-v2-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save thumbnails and map sources
         if: ${{ success() || steps.build-static-site.outcome == 'failure' }}
         uses: actions/cache/save@v6
         with:
           path: node_modules/.vite/slides/thumbnails
-          key: thumbnails-v3-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}-${{ github.run_attempt }}
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
+          key: thumbnails-v4-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5

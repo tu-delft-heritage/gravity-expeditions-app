@@ -7,3 +7,7 @@ static/iiif/
 .env
 .env.*
 !.env.example
+
+.slides/
+
+.container-cache/
