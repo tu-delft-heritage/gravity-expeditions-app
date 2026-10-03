@@ -11,7 +11,7 @@
     "check": "slides check ."
   },
   "devDependencies": {
-    "@allmaps/slides": "0.1.0-beta.1"
+    "@allmaps/slides": "0.1.0-beta.2"
   },
   "packageManager": "pnpm@10.22.0",
   "engines": {

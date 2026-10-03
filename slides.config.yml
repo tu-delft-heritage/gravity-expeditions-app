@@ -29,6 +29,10 @@ sources:
   route:
     type: geojson
     path: assets/geojson/route.geojson
+layers:
+  # Shared default; individual slides can override visibility or opacity.
+  - layer: route-line
+    visibility: visible
 
 site:
   publicUrl: https://tu-delft-heritage.github.io/gravity-expeditions-app/

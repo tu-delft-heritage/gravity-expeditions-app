@@ -7,6 +7,10 @@ Edit `assets/geojson/route.geojson` for geometry and SimpleStyle properties:
 `stroke`, `stroke-width` and `stroke-opacity`. These affect both the interactive
 map and generated previews.
 
+The global `layers` entry keeps `route-line` visible by default. To hide it on
+one slide, add `layers: [{layer: route-line, visibility: none}]` to that slide's
+frontmatter. Other slides return to the global default.
+
 The [Pages workflow](../.github/workflows/deploy-pages.yml) caches IIIF images,
 annotations and map previews. It builds with the shared Slides source and exports
 `dist/site`. See [Slides deployment](https://github.com/allmaps/slides/blob/main/docs/deployment.md)
